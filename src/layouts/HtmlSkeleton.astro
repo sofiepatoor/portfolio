@@ -1,0 +1,33 @@
+---
+const { pageTitle } = Astro.props;
+const fullPageTitle = `${pageTitle} / sofie`;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>{fullPageTitle}</title>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="author" content="Sofie Patoor" />
+  <meta name="description" content="Brief description" />
+
+  <meta property="og:title" content={fullPageTitle} />
+  <meta property="og:description" content="Brief description" />
+  <meta property="og:image" content="/some-image.png" />
+  <meta property="og:url" content="/this-page.html" />
+  <meta property="og:site_name" content={fullPageTitle} />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image:alt" content="image description" />
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <meta name="generator" content={Astro.generator} />
+</head>
+
+<body>
+  <slot />
+</body>
+</html>

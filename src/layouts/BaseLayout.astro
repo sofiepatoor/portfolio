@@ -1,0 +1,22 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import HtmlSkeleton from './HtmlSkeleton.astro';
+import '../styles/global.css';
+
+const { pageTitle } = Astro.props;
+---
+
+<HtmlSkeleton pageTitle={pageTitle}>
+  <Header />
+
+  <main>
+    <slot />
+  </main>
+
+  <Footer />
+
+  <script>
+    // import "../scripts/menu.js";
+  </script>
+</HtmlSkeleton>
