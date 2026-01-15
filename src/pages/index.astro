@@ -1,10 +1,24 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Button from '../components/Button.astro';
 ---
+
 <BaseLayout pageTitle="home">
   <div class="container">
-    <h1>sofie</h1>
-    <h2>experience</h2>
-    <h2>education</h2>
+    <h1>Sofie Patoor</h1>
+    <p class="intro">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente, maxime repudiandae expedita illo pariatur placeat voluptas consectetur non magnam quaerat vel neque cupiditate iure nostrum quod! Iure similique quaerat tenetur.</p>
+    <Button>
+      Hallo daar
+    </Button>
   </div>
 </BaseLayout>
+
+<style>
+  h1 {
+    text-align: center;
+  }
+
+  .intro {
+    text-align: center;
+  }
+</style>

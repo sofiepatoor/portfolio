@@ -10,6 +10,7 @@ html {
 
   --purple: hsl(280, 55%, 50%);
   --purple-light: hsl(280, 66%, 85%);
+  --purple-hover: hsl(280, 55%, 40%);
   --indigo: hsl(225, 88%, 20%);
 
   --type-xs: 0.875rem; /* 14px */
@@ -42,6 +43,7 @@ body {
 h1, h2, h3, h4 {
   font-family: var(--font-serif);
   font-weight: 400;
+  margin-bottom: 0.8em;
 }
 
 h1 {
@@ -50,6 +52,7 @@ h1 {
   font-style: italic;
   letter-spacing: -0.08ch;
   text-transform: lowercase;
+  margin-bottom: 0.4em;
 }
 
 h2 {
