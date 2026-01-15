@@ -1,13 +1,14 @@
 ---
+import Logo from "./Logo.astro";
+import NavLinks from "./NavLinks.astro";
 
 ---
+
 <header>
   <div class="container">
     <nav>
-      <ul>
-        <li><a href="/">home</a></li>
-        <li><a href="/about">about</a></li>
-      </ul>
+      <Logo />
+      <NavLinks />
     </nav>
   </div>
 </header>
@@ -18,15 +19,8 @@
     padding-block: 1rem;
   }
 
-  nav ul {
+  nav {
     display: flex;
-    align-items: baseline;
-    gap: 16pxs;
-    list-style: none;
-    padding-left: 0;
-  }
-
-  nav ul li {
-    display: inline-block;
+    justify-content: space-between;
   }
 </style>
