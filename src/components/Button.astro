@@ -1,8 +1,8 @@
 ---
-const { url } = Astro.props;
+const { url, alignment } = Astro.props;
 ---
 
-<a href={url}>
+<a href={url} class={alignment}>
   <slot />
 </a>
 
@@ -53,5 +53,9 @@ const { url } = Astro.props;
         bottom: 0;
       }
     }
+  }
+
+  .center {
+    margin: 0 auto;
   }
 </style>
