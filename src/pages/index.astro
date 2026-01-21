@@ -5,17 +5,19 @@ import Button from '../components/Button.astro';
 
 <BaseLayout pageTitle="home">
   <div class="container">
-    <h1>Sofie Patoor</h1>
-    <div class="intro">
-      <p>
-        I'm a medior <strong>front-end developer</strong> with a creative background. I care about usability, accessibility and generally the craft of writing high-quality code.
-      </p>
-      <Button alignment={'center'}>
-        Say hi!
-      </Button>
-    </div>
+    <section class="hero">
+      <h1>Sofie Patoor</h1>
+      <div>
+        <p>
+          I'm a medior <strong>front-end developer</strong> with a creative background. I care about usability, accessibility and generally the craft of writing high-quality code.
+        </p>
+        <Button alignment={'center'}>
+          Say hi!
+        </Button>
+      </div>
+    </section>
 
-    <section id="about">
+    <section class="about" id="about">
       <h2>About me</h2>
       <div class="content">
         <p>I studied <a href="https://www.devine.be" target="_blank" rel="noopener">Digital Design &amp; Entertainment (DEVINE)</a> at Howest in Kortrijk, followed by a postgraduate degree in <a href="https://www.howest.be/nl/opleidingen/postgraduaat/applied-artificial-intelligence" target="_blank" rel="noopener">Applied Artificial Intelligence</a>. Today, I'm working as a front-end developer at <a href="https://www.dynamate.be" target="_blank" rel="noopener">Dynamate</a>, where I build and maintain diverse web interfaces for a wide range of clients.</p>
@@ -23,7 +25,7 @@ import Button from '../components/Button.astro';
       </div>
     </section>
 
-    <section>
+    <section class="current">
       <h2>Currently focused on</h2>
       <div class="content">
         <p>I want my personal website to reflect how I keep growing as a developer and put the concept of "learning in public" into practice.</p>
@@ -42,8 +44,12 @@ import Button from '../components/Button.astro';
     text-align: center;
   }
 
-  .intro {
-    margin-bottom: 4rem;
+  .hero {
+    min-height: 50vh;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
     p {
       font-size: 1.25rem;
@@ -53,7 +59,9 @@ import Button from '../components/Button.astro';
     }
   }
 
-  section {
+  .hero,
+  .about,
+  .current {
     margin-bottom: 4rem;
   }
 </style>
