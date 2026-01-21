@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Button from '../components/Button.astro';
 import Card from '../components/Card.astro';
+import TextLink from '../components/TextLink.astro';
 ---
 
 <BaseLayout pageTitle="home">
@@ -23,7 +24,7 @@ import Card from '../components/Card.astro';
     <div class="container">
       <h2>About me</h2>
       <div class="content">
-        <p>I studied <a href="https://www.devine.be" target="_blank" rel="noopener">Digital Design &amp; Entertainment (DEVINE)</a> at Howest in Kortrijk, followed by a postgraduate degree in <a href="https://www.howest.be/nl/opleidingen/postgraduaat/applied-artificial-intelligence" target="_blank" rel="noopener">Applied Artificial Intelligence</a>. Today, I'm working as a front-end developer at <a href="https://www.dynamate.be" target="_blank" rel="noopener">Dynamate</a>, where I build and maintain diverse web interfaces for a wide range of clients.</p>
+        <p>I studied <TextLink href="https://www.devine.be">Digital Design &amp; Entertainment (DEVINE)</TextLink> at Howest in Kortrijk, followed by a postgraduate degree in <TextLink href="https://www.howest.be/nl/opleidingen/postgraduaat/applied-artificial-intelligence">Applied Artificial Intelligence</TextLink>. Today, I'm working as a front-end developer at <TextLink href="https://www.dynamate.be">Dynamate</TextLink>, where I build and maintain diverse web interfaces for a wide range of clients.</p>
         <p>Outside of coding, I tend to have <em>a lot</em> of different interests, ranging from gaming, to pilates, to creative side-quests, to finally learning how to play my guitar. When I need a break from everything digital, I enjoy <s>grandma</s> hobbies like reading, sewing and taking walks.</p>
       </div>
     </div>

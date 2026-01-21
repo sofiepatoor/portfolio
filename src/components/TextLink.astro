@@ -1,0 +1,40 @@
+---
+const { href } = Astro.props;
+const isExternal = href.includes('http');
+---
+
+<a
+  href={href}
+  target={isExternal ? '_blank' : ''}
+  rel={isExternal ? 'noopener' : ''}
+>
+  <slot />
+</a>
+
+<style lang="scss">
+  a {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 1px solid white;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      background-color: var(--purple-hover);
+      width: 0%;
+      height: 100%;
+      z-index: -1;
+      transition: all 0.2s ease-in;
+    }
+
+    &:hover,
+    &:focus {
+      &::before {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+</style>
