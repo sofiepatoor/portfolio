@@ -1,11 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Button from '../components/Button.astro';
+import Card from '../components/Card.astro';
 ---
 
 <BaseLayout pageTitle="home">
-  <div class="container">
-    <section class="hero">
+  <section class="hero">
+    <div class="container">
       <h1>Sofie Patoor</h1>
       <div>
         <p>
@@ -15,25 +16,31 @@ import Button from '../components/Button.astro';
           Say hi!
         </Button>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="about" id="about">
+  <section class="about" id="about">
+    <div class="container">
       <h2>About me</h2>
       <div class="content">
         <p>I studied <a href="https://www.devine.be" target="_blank" rel="noopener">Digital Design &amp; Entertainment (DEVINE)</a> at Howest in Kortrijk, followed by a postgraduate degree in <a href="https://www.howest.be/nl/opleidingen/postgraduaat/applied-artificial-intelligence" target="_blank" rel="noopener">Applied Artificial Intelligence</a>. Today, I'm working as a front-end developer at <a href="https://www.dynamate.be" target="_blank" rel="noopener">Dynamate</a>, where I build and maintain diverse web interfaces for a wide range of clients.</p>
         <p>Outside of coding, I tend to have <em>a lot</em> of different interests, ranging from gaming, to pilates, to creative side-quests, to finally learning how to play my guitar. When I need a break from everything digital, I enjoy <s>grandma</s> hobbies like reading, sewing and taking walks.</p>
       </div>
-    </section>
+    </div>
+  </section>
 
     <section class="current">
-      <h2>Currently focused on</h2>
-      <div class="content">
-        <p>I want my personal website to reflect how I keep growing as a developer and put the concept of "learning in public" into practice.</p>
-        <p>Right now, I'm focusing on:</p>
-        <ul>
-          <li>broadening my skillset as a developer by <strong>building personal projects</strong></li>
-          <li>actively educating myself on <strong>digital accessibility</strong></li>
-        </ul>
+      <div class="container">
+        <Card title="Current endeavors">
+          <div class="content">
+            <p>I want my personal website to reflect how I keep growing as a developer and put the concept of "learning in public" into practice.</p>
+            <p>Right now, I'm focusing on:</p>
+            <ul>
+              <li>broadening my skillset as a developer by <strong>building personal projects</strong></li>
+              <li>actively educating myself on <strong>digital accessibility</strong></li>
+            </ul>
+          </div>
+        </Card>
       </div>
     </section>
   </div>
