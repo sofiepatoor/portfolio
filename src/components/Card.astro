@@ -8,7 +8,7 @@ const { title } = Astro.props;
   <slot />
 </div>
 
-<style>
+<style lang="scss">
   .title {
     font-family: var(--font-sans-serif);
     font-style: normal;
@@ -19,12 +19,17 @@ const { title } = Astro.props;
     text-decoration: none;
     margin-bottom: 1em;
   }
+
   .card {
     background-color: white;
     border-radius: 18px;
     color: var(--indigo);
-    padding-block: 2.5rem;
+    padding-block: 40px;
     padding-inline: var(--container-padding);
-    margin-left: calc(-1 * var(--container-padding));
+
+    @media screen and (min-width: 48rem) {
+      margin-left: calc(-1 * var(--container-padding));
+      margin-right: calc(-1 * var(--container-padding));
+    }
   }
 </style>
