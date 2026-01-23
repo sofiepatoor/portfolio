@@ -1,16 +1,51 @@
 ---
+import { Picture } from 'astro:assets';
+
 import BaseLayout from '../layouts/BaseLayout.astro';
 import TextLink from '../components/TextLink.astro';
+
+import portraitImg from '../assets/sofie.jpg';
 ---
 
 <BaseLayout pageTitle="home">
   <section class="about" id="about">
     <div class="container">
       <h1>About me</h1>
-      <div class="content">
-        <p>I studied <TextLink href="https://www.devine.be">Digital Design &amp; Entertainment (DEVINE)</TextLink> at Howest in Kortrijk, followed by a postgraduate degree in <TextLink href="https://www.howest.be/nl/opleidingen/postgraduaat/applied-artificial-intelligence">Applied Artificial Intelligence</TextLink>. Today, I'm working as a front-end developer at <TextLink href="https://www.dynamate.be">Dynamate</TextLink>, where I build and maintain diverse web interfaces for a wide range of clients.</p>
-        <p>Outside of coding, I tend to have <em>a lot</em> of different interests, ranging from gaming, to pilates, to creative side-quests, to finally learning how to play my guitar. When I need a break from everything digital, I enjoy <s>grandma</s> hobbies like reading, sewing and taking walks.</p>
+      <div class="flex">
+        <Picture src={portraitImg} formats={['avif', 'webp']} alt="Photo of Sofie" layout='constrained' width={600} height={600} />
+        <div class="content">
+          <p>I studied <TextLink href="https://www.devine.be">Digital Design &amp; Entertainment (DEVINE)</TextLink> at Howest in Kortrijk, followed by a postgraduate degree in <TextLink href="https://www.howest.be/nl/opleidingen/postgraduaat/applied-artificial-intelligence">Applied Artificial Intelligence</TextLink>. Today, I'm working as a front-end developer at <TextLink href="https://www.dynamate.be">Dynamate</TextLink>, where I build and maintain diverse web interfaces for a wide range of clients.</p>
+          <p>Outside of coding, I tend to have <em>a lot</em> of different interests, ranging from gaming, to pilates, to creative side-quests, to finally learning how to play my guitar. When I need a break from everything digital, I enjoy <s>grandma</s> hobbies like reading, sewing and taking walks.</p>
+        </div>
       </div>
     </div>
   </section>
 </BaseLayout>
+
+<style lang="scss">
+  h1 {
+    text-align: center;
+  }
+
+  .flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-lg);
+  }
+
+  picture {
+    flex-shrink: 0;
+    width: 40%;
+  }
+
+  img {
+    height: auto;
+    border-radius: 18px;
+
+    &::after {
+      content: "";
+      position: absolute;
+    }
+  }
+</style>
