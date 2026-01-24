@@ -1,0 +1,25 @@
+---
+import Card from '../components/Card.astro';
+import BaseLayout from './BaseLayout.astro';
+
+const { frontmatter } = Astro.props;
+---
+<BaseLayout pageTitle={frontmatter.title}>
+  <div class="container">
+    <Card>
+      <h1>{frontmatter.title}</h1>
+      <p class="date">Published on: {frontmatter.pubDate.toLocaleDateString()}</p>
+      <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
+
+      <div class="content">
+        <slot />
+      </div>
+    </Card>
+  </div>
+</BaseLayout>
+
+<style lang="scss">
+  .date {
+    margin-bottom: 2rem;
+  }
+</style>
