@@ -19,9 +19,9 @@ const dateFormatOptions = {
         <a href={`/blog/${post.id}/`} class="item-title">
           {post.data.title}
         </a>
-        <span class="item-date caption">
-        {post.data.created_date.toLocaleDateString('en-GB', dateFormatOptions)}
-        </span>
+        <time class="item-date caption">
+          {post.data.created_date.toLocaleDateString('en-GB', dateFormatOptions)}
+        </time>
       </div>
       <ArrowRight width={28} height={28} stroke="currentColor" />
     </li>

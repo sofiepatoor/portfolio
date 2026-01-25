@@ -14,7 +14,7 @@ const dateFormatOptions = {
   <div class="container">
     <h1>{frontmatter.title}</h1>
     <p class="short-description">{frontmatter.short_description}</p>
-    <p class="date caption">{frontmatter.created_date.toLocaleDateString('en-GB', dateFormatOptions)}</p>
+    <time class="date caption">{frontmatter.created_date.toLocaleDateString('en-GB', dateFormatOptions)}</time>
     <Card>
       <div class="content">
         <slot />
@@ -34,6 +34,7 @@ const dateFormatOptions = {
   }
 
   .date {
+    display: block;
     margin-top: 2rem;
     margin-bottom: 1rem;
   }
