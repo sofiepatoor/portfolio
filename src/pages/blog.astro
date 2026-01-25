@@ -1,26 +1,22 @@
 ---
-import { getCollection } from "astro:content";
+
 
 import BaseLayout from '../layouts/BaseLayout.astro';
-
-const allPosts = await getCollection("blog");
+import PostList from "../components/PostList.astro";
 ---
 
 <BaseLayout pageTitle="blog">
-  <section class="about" id="about">
+  <section>
     <div class="container">
       <h1>Blog</h1>
-      {
-        allPosts.map((post) => (
-          <li><a href={`/posts/${post.id}/`}>{post.data.title}</a></li>
-        ))
-      }
+      <PostList />
     </div>
   </section>
 </BaseLayout>
 
 <style lang="scss">
   h1 {
-    text-align: center;
+    // text-align: center;
+    padding-top: clamp(30px, 5vh, 60px);
   }
 </style>

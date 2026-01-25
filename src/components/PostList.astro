@@ -1,0 +1,96 @@
+---
+import { getCollection } from "astro:content";
+const allPosts = await getCollection("blog");
+
+import ArrowRight from '../assets/arrow-right.svg';
+
+const dateFormatOptions = {
+  year: "numeric",
+  month: "short",
+  day: "numeric",
+};
+---
+
+<ol class="list">
+{
+  allPosts.map((post) => (
+    <li class="item">
+      <div class="item-info">
+        <a href={`/blog/${post.id}/`} class="item-title">
+          {post.data.title}
+        </a>
+        <span class="item-date caption">
+        {post.data.created_date.toLocaleDateString('en-GB', dateFormatOptions)}
+        </span>
+      </div>
+      <ArrowRight width={28} height={28} stroke="currentColor" />
+    </li>
+  ))
+}
+</ol>
+
+<style lang="scss">
+  .list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+  }
+
+  .item {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 10px;
+    isolation: isolate;
+    font-size: clamp(1rem, 3vw, 1.15rem);
+    font-weight: 500;
+  }
+
+  .item-info {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    gap: 0 1em;
+  }
+
+  .item-title {
+    text-decoration: none;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+  }
+
+  .item-date {
+    opacity: 0.75;
+    transition: opacity 0.15s ease-in-out;
+  }
+
+  .item svg {
+    background-color: transparent;
+    padding: 4px;
+    border-radius: 8px;
+    transition: all 0.15s ease-in-out;
+  }
+
+  .item:hover,
+  .item:focus-within {
+    .item-date {
+      opacity: 1;
+    }
+
+    svg {
+      stroke: white;
+      background-color: var(--purple);
+    }
+  }
+
+  .item:last-child {
+    border-bottom: none;
+  }
+</style>

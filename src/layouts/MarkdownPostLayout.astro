@@ -3,14 +3,19 @@ import Card from '../components/Card.astro';
 import BaseLayout from './BaseLayout.astro';
 
 const { frontmatter } = Astro.props;
+
+const dateFormatOptions = {
+  year: "numeric",
+  month: "short",
+  day: "numeric",
+};
 ---
 <BaseLayout pageTitle={frontmatter.title}>
   <div class="container">
+    <h1>{frontmatter.title}</h1>
+    <p class="short-description">{frontmatter.short_description}</p>
+    <p class="date caption">{frontmatter.created_date.toLocaleDateString('en-GB', dateFormatOptions)}</p>
     <Card>
-      <h1>{frontmatter.title}</h1>
-      <p class="date">Published on: {frontmatter.pubDate.toLocaleDateString()}</p>
-      <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
-
       <div class="content">
         <slot />
       </div>
@@ -19,7 +24,17 @@ const { frontmatter } = Astro.props;
 </BaseLayout>
 
 <style lang="scss">
+  h1 {
+    padding-top: clamp(30px, 5vh, 60px);
+    margin-bottom: 0.2em;
+  }
+
+  .short-description {
+    font-size: 1.25rem;
+  }
+
   .date {
-    margin-bottom: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
   }
 </style>
