@@ -1,43 +1,16 @@
-# Astro Starter Kit: Minimal
+# Sofie's personal website
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Hi there! This website had been hibernating for a while until I rebooted it at the beginning of 2026.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+I want this website to reflect how I keep growing as a developer and put the concept of "learning in public" into practice.
 
-## 🚀 Project Structure
+Feel free to take a look into the source code of my website!
 
-Inside of your Astro project, you'll see the following folders and files:
+## A little roadmap
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+In the near future, I'd like to add certain features, pages and content:
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- [ ] make the layout and content of the "about" page more interesting
+- [ ] add a "projects" page where I document the process of building personal projects
+- [ ] add tags for my blog
+- [ ] hide some fun little easter eggs for people who read my blog
