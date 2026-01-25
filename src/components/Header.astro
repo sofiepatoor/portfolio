@@ -6,7 +6,7 @@ import NavLink from "./NavLink.astro";
 <header>
   <div class="container">
     <nav>
-      <a href="/">
+      <a href="/" class="logo-link" aria-label="Homepage">
         <Logo />
       </a>
       <ul>
@@ -39,5 +39,14 @@ import NavLink from "./NavLink.astro";
 
   li {
     display: inline-block;
+  }
+
+  .logo-link {
+    transition: all 0.15s ease-in-out;
+
+    &:hover,
+    &:focus {
+      filter: brightness(85%);
+    }
   }
 </style>
