@@ -2,21 +2,14 @@
 const { title } = Astro.props;
 ---
 
-{title && <h2 class="title">{title}</h2>}
+{title && <h2 class="caption title">{title}</h2>}
 
 <div class="card">
   <slot />
 </div>
 
 <style lang="scss">
-  .title {
-    font-family: var(--font-sans-serif);
-    font-style: normal;
-    text-transform: uppercase;
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 0.3ch;
-    text-decoration: none;
+  .title.caption {
     margin-bottom: 1em;
   }
 

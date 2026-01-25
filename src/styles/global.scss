@@ -1,5 +1,7 @@
 @import "./_reset.css";
-@import "@fontsource/open-sans";
+@import "@fontsource/open-sans/400.css";
+@import "@fontsource/open-sans/500.css";
+@import "@fontsource/open-sans/600.css";
 @import "@fontsource/averia-serif-libre/300-italic.css";
 @import "@fontsource/averia-serif-libre/400.css";
 
@@ -41,22 +43,29 @@ body {
   font-size: var(--type-md);
 }
 
-h1, h2, h3, h4 {
+h1 {
   font-family: var(--font-serif);
-  font-weight: 400;
+  font-size: 3.6rem;
+  font-weight: 300;
   font-style: italic;
   text-transform: lowercase;
   letter-spacing: -0.08ch;
+  line-height: 1.2;
   margin-bottom: 0.4em;
 }
 
-h1 {
-  font-size: 3.6rem;
-  font-weight: 300;
+h2, h3, h4 {
+  font-family: var(--font-sans-serif);
+  font-weight: 400;
+  margin-bottom: 0.8em;
 }
 
-h2 {
-  font-size: 2rem;
+.caption {
+  font-family: var(--font-sans-serif);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.3ch;
 }
 
 p {
@@ -74,6 +83,10 @@ main {
   flex: 1;
 }
 
+section {
+  margin-bottom: 4rem;
+}
+
 .container {
   --container-padding: clamp(20px, 5vw, 32px);
   max-inline-size: 46rem;
@@ -85,5 +98,9 @@ main {
 .content {
   p {
     margin-bottom: 1.2em;
+  }
+
+  & > *:last-child {
+    margin-bottom: 0;
   }
 }

@@ -3,16 +3,17 @@ import { Picture } from 'astro:assets';
 
 import BaseLayout from '../layouts/BaseLayout.astro';
 import TextLink from '../components/TextLink.astro';
+import Card from '../components/Card.astro';
 
 import portraitImg from '../assets/sofie.jpg';
 ---
 
-<BaseLayout pageTitle="home">
-  <section class="about" id="about">
+<BaseLayout pageTitle="about me">
+  <section class="hero">
     <div class="container">
       <h1>About me</h1>
       <div class="flex">
-        <Picture src={portraitImg} formats={['avif', 'webp']} alt="Photo of Sofie" layout='constrained' width={600} height={600} />
+        <!-- <Picture src={portraitImg} formats={['avif', 'webp']} alt="Photo of Sofie" layout='constrained' width={600} height={600} /> -->
         <div class="content">
           <p>I studied <TextLink href="https://www.devine.be">Digital Design &amp; Entertainment (DEVINE)</TextLink> at Howest in Kortrijk, followed by a postgraduate degree in <TextLink href="https://www.howest.be/nl/opleidingen/postgraduaat/applied-artificial-intelligence">Applied Artificial Intelligence</TextLink>. Today, I'm working as a front-end developer at <TextLink href="https://www.dynamate.be">Dynamate</TextLink>, where I build and maintain diverse web interfaces for a wide range of clients.</p>
           <p>Outside of coding, I tend to have <em>a lot</em> of different interests, ranging from gaming, to pilates, to creative side-quests, to finally learning how to play my guitar. When I need a break from everything digital, I enjoy <s>grandma</s> hobbies like reading, sewing and taking walks.</p>
@@ -20,11 +21,27 @@ import portraitImg from '../assets/sofie.jpg';
       </div>
     </div>
   </section>
+
+  <section class="current" id="current">
+    <div class="container">
+      <Card title="Current endeavors">
+        <div class="content">
+          <p>I want my personal website to reflect how I keep growing as a developer and put the concept of "learning in public" into practice.</p>
+          <p>Right now, I'm focusing on:</p>
+          <ul>
+            <li>broadening my skillset as a developer by <strong>building personal projects</strong></li>
+            <li>actively educating myself on <strong>digital accessibility</strong></li>
+          </ul>
+        </div>
+      </Card>
+    </div>
+  </section>
 </BaseLayout>
 
 <style lang="scss">
   h1 {
-    text-align: center;
+    // text-align: center;
+    padding-top: clamp(30px, 5vh, 60px);
   }
 
   .flex {

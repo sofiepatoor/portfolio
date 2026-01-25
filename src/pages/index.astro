@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Button from '../components/Button.astro';
 import Card from '../components/Card.astro';
+import PostList from '../components/PostList.astro';
 
 ---
 
@@ -11,7 +12,7 @@ import Card from '../components/Card.astro';
       <h1>Sofie Patoor</h1>
       <div>
         <p>
-          I'm a medior <strong>front-end developer</strong> with a creative background. I care about usability, accessibility and generally the craft of writing high-quality code.
+          I'm a medior <strong>front-end developer</strong> with a creative background, based in Ghent. I care about thoughtful design, usability, accessibility and high-quality code.
         </p>
         <Button href="https://www.linkedin.com/in/sofiepatoor/" alignment={'center'}>
           Say hi!
@@ -19,18 +20,10 @@ import Card from '../components/Card.astro';
       </div>
     </div>
   </section>
-
-  <section class="current" id="current">
+  <section>
     <div class="container">
-      <Card title="Current endeavors">
-        <div class="content">
-          <p>I want my personal website to reflect how I keep growing as a developer and put the concept of "learning in public" into practice.</p>
-          <p>Right now, I'm focusing on:</p>
-          <ul>
-            <li>broadening my skillset as a developer by <strong>building personal projects</strong></li>
-            <li>actively educating myself on <strong>digital accessibility</strong></li>
-          </ul>
-        </div>
+      <Card title="blog">
+        <PostList />
       </Card>
     </div>
   </section>
@@ -43,7 +36,7 @@ import Card from '../components/Card.astro';
   }
 
   .hero {
-    min-height: 50vh;
+    min-height: 40vh;
     margin-bottom: 0;
     display: flex;
     flex-direction: column;
@@ -55,11 +48,5 @@ import Card from '../components/Card.astro';
       margin: 0 auto 2rem;
       max-width: 50ch;
     }
-  }
-
-  .hero,
-  .about,
-  .current {
-    margin-bottom: 4rem;
   }
 </style>
