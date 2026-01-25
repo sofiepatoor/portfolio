@@ -4,7 +4,10 @@
 
 <footer>
   <div class="container">
-    <p><a href="https://www.linkedin.com/in/sofiepatoor/" target="_blank" rel="noopener">Find me on LinkedIn</a></p>
+    <address>
+      <a href="https://www.linkedin.com/in/sofiepatoor/" class="caption-link" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/sofiepatoor" class="caption-link" target="_blank" rel="noopener">Github</a>
+    </address>
   </div>
 </footer>
 
@@ -12,6 +15,13 @@
   footer {
     width: 100%;
     padding-block: 1rem;
+  }
+
+  address {
+    font-style: normal;
+    display: flex;
+    justify-content: center;
+    gap: var(--space-md);
   }
 
   p {

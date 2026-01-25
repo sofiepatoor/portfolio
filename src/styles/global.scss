@@ -60,14 +60,6 @@ h2, h3, h4 {
   margin-bottom: 0.8em;
 }
 
-.caption {
-  font-family: var(--font-sans-serif);
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.3ch;
-}
-
 p {
   line-height: 1.6em;
 }
@@ -102,5 +94,45 @@ section {
 
   & > *:last-child {
     margin-bottom: 0;
+  }
+}
+
+.caption {
+  font-family: var(--font-sans-serif);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.3ch;
+}
+
+.caption-link {
+  @extend .caption;
+  position: relative;
+  text-decoration: none;
+  padding-block: 0.25em;
+  transition: all 0.15s ease-in-out;
+  isolation: isolate;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    background-color: var(--purple);
+    transition: all 0.15s ease-in-out;
+    z-index: -1;
+  }
+
+  &::after {
+    right: 0;
+    width: 100%;
+  }
+
+  &:hover,
+  &:focus,
+  &.active {
+    &::after {
+      height: 100%;
+    }
   }
 }
