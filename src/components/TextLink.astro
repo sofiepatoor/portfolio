@@ -9,6 +9,7 @@ const isExternal = href.includes('http');
   rel={isExternal ? 'noopener' : ''}
 >
   <slot />
+  {isExternal && <span class="vh">(opens in new tab)</span>}
 </a>
 
 <style lang="scss">
