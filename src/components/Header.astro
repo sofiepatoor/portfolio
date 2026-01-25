@@ -1,6 +1,6 @@
 ---
 import Logo from '../assets/logo.svg';
-import NavLinks from "./NavLinks.astro";
+import NavLink from "./NavLink.astro";
 ---
 
 <header>
@@ -9,7 +9,10 @@ import NavLinks from "./NavLinks.astro";
       <a href="/">
         <Logo />
       </a>
-      <NavLinks />
+      <ul>
+        <li><NavLink href="/blog">Blog</NavLink></li>
+        <li><NavLink href="/about">About</NavLink></li>
+      </ul>
     </nav>
   </div>
 </header>
@@ -23,5 +26,18 @@ import NavLinks from "./NavLinks.astro";
   nav {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+  }
+
+  ul {
+    display: flex;
+    align-items: baseline;
+    gap: clamp(20px, 5vw, 36px);
+    list-style: none;
+    padding-left: 0;
+  }
+
+  li {
+    display: inline-block;
   }
 </style>

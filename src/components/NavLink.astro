@@ -1,0 +1,38 @@
+---
+const { href } = Astro.props;
+
+const { pathname } = Astro.url;
+const subpath = pathname.match(/[^\/]+/g);
+const isActive = href === pathname || href === '/' + subpath?.[0];
+---
+
+<a href={href} class:list={['caption', { active: isActive }]}>
+  <slot />
+</a>
+
+<style lang="scss">
+  a {
+    position: relative;
+    text-decoration: none;
+    padding-block: 0.25em;
+  }
+
+  a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: var(--purple);
+    transition: all 0.15s ease-in-out;
+  }
+
+  a:hover,
+  a:focus,
+  a.active {
+    &::after {
+      width: 100%;
+    }
+  }
+</style>
