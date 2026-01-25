@@ -30,6 +30,11 @@ html {
 
   --font-sans-serif: 'Open Sans', 'Helvetica Neue', system-ui, -apple-system, sans-serif;
   --font-serif: 'Averia Serif Libre', serif;
+
+  *:focus-visible {
+    outline: var(--purple-light) dashed medium;
+    transition: none !important; // prevent transition on outline width
+  }
 }
 
 body {
