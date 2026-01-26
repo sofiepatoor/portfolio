@@ -1,7 +1,7 @@
 ---
 title: 'Rebooting my personal website'
-created_date: 2026-01-24
-updated_date: 2026-01-25
+created_date: 2026-01-26
+updated_date: 2026-01-26
 short_description: 'About rediscovering my love and curiosity for the internet'
 ---
 
