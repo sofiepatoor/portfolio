@@ -2,6 +2,7 @@
 @import "@fontsource/open-sans/400.css";
 @import "@fontsource/open-sans/500.css";
 @import "@fontsource/open-sans/600.css";
+@import "@fontsource/open-sans/700.css";
 @import "@fontsource/averia-serif-libre/300-italic.css";
 @import "@fontsource/averia-serif-libre/400.css";
 
@@ -46,6 +47,7 @@ body {
   color: white;
   font-family: var(--font-sans-serif);
   font-size: var(--type-md);
+  font-weight: 500;
 }
 
 h1 {
@@ -61,7 +63,7 @@ h1 {
 
 h2, h3, h4 {
   font-family: var(--font-sans-serif);
-  font-weight: 400;
+  font-weight: 500;
   margin-bottom: 0.8em;
 }
 
@@ -106,6 +108,32 @@ section {
   p {
     margin-bottom: 1.2em;
   }
+
+  h2, h3, h4 {
+    margin-top: 2em;
+  }
+
+  a {
+    transition: color 0.15s ease-in-out;
+
+    &:hover,
+    &:focus {
+      color: var(--purple-hover);
+    }
+  }
+
+  & > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+blockquote {
+  font-style: italic;
+  border-left: 2px solid var(--purple);
+  padding-inline: 1em;
+  padding-block: 0.6em;
+  background-color: var(--purple-light);
+  margin-bottom: 1.2em;
 
   & > *:last-child {
     margin-bottom: 0;
