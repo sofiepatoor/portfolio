@@ -113,7 +113,7 @@ section {
     margin-top: 2em;
   }
 
-  a {
+  a:not(.text-link) {
     transition: color 0.15s ease-in-out;
 
     &:hover,

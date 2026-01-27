@@ -7,6 +7,7 @@ const isExternal = href.includes('http');
   href={href}
   target={isExternal ? '_blank' : ''}
   rel={isExternal ? 'noopener' : ''}
+  class="text-link"
 >
   <slot />
   {isExternal && <span class="vh">(opens in new tab)</span>}
