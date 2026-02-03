@@ -9,9 +9,10 @@ Here, I want to document how I keep growing as a **developer** and put the conce
 In the near future, I'd like to add certain features, pages and content:
 
 - [ ] make the layout and content of the "about" page more interesting
+- [ ] implement MDX to use for content
 - [ ] add a "projects" page where I document the process of building personal projects
 - [ ] add tags for my blog
-- [ ] implement [IndieWeb](https://indieweb.org) principles
+- [ ] add optimisations for the [IndieWeb](https://indieweb.org)
 - [ ] hide some fun little easter eggs
 - [ ] ... and more!
 
