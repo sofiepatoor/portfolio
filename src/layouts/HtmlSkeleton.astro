@@ -1,4 +1,6 @@
 ---
+import Analytics from '@vercel/analytics/astro';
+
 const { pageTitle } = Astro.props;
 const fullPageTitle = `${pageTitle} / sofie`;
 ---
@@ -25,6 +27,7 @@ const fullPageTitle = `${pageTitle} / sofie`;
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
   <meta name="generator" content={Astro.generator} />
+  <Analytics />
 </head>
 
 <body>
