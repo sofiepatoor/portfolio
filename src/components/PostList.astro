@@ -14,9 +14,9 @@ const dateFormatOptions = {
 <ol class="list">
 {
   allPosts.map((post) => (
-    <li class="item">
+    <li class="item h-entry">
       <div class="item-info">
-        <a href={`/blog/${post.id}/`} class="item-title">
+        <a href={`/blog/${post.id}/`} class="item-title u-url p-name">
           {post.data.title}
         </a>
         <time class="item-date caption">
