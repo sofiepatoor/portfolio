@@ -22,8 +22,8 @@ const dateFormatOptions = {
       <div class="details">
         <time class="date caption dt-published">{frontmatter.created_date.toLocaleDateString('en-GB', dateFormatOptions)}</time>
         <span>&sol;</span>
-        <div class="author p-author">
-          by <HCard hideAvatar={true} />
+        <div class="author">
+          by <HCard hideAvatar={true} asAuthor={true} />
         </div>
       </div>
       
