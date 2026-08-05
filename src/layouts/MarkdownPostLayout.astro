@@ -1,11 +1,12 @@
 ---
 import Button from '../components/Button.astro';
 import Card from '../components/Card.astro';
+import HCard from '../components/HCard.astro';
 import BaseLayout from './BaseLayout.astro';
 
 const { frontmatter } = Astro.props;
 
-const currentUrl = Astro.url;
+const currentUrl = `https://www.sofiepatoor.be${Astro.url.pathname}`;
 const dateFormatOptions = {
   year: "numeric",
   month: "short",
@@ -18,7 +19,14 @@ const dateFormatOptions = {
       <h1 class="p-name">{frontmatter.title}</h1>
       <a href={currentUrl} class="vh u-url" aria-hidden="true" tabindex="-1"></a>
       <p class="short-description p-summary">{frontmatter.short_description}</p>
-      <time class="date caption dt-published">{frontmatter.created_date.toLocaleDateString('en-GB', dateFormatOptions)}</time>
+      <div class="details">
+        <time class="date caption dt-published">{frontmatter.created_date.toLocaleDateString('en-GB', dateFormatOptions)}</time>
+        <span>&sol;</span>
+        <div class="author p-author">
+          by <HCard hideAvatar={true} />
+        </div>
+      </div>
+      
       <Card>
         <div class="content e-content">
           <slot />
@@ -39,10 +47,17 @@ const dateFormatOptions = {
     font-size: 1.25rem;
   }
 
-  .date {
-    display: block;
+  .details {
+    display: flex;
+    align-items: center;
     margin-top: 2rem;
     margin-bottom: 1rem;
+    gap: 0.8rem;
+  }
+
+  .author {
+    display: flex;
+    gap: 0.3em;
   }
 
   .content {

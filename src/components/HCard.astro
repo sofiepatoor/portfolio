@@ -1,0 +1,27 @@
+---
+import avatarImg from '../assets/sofie-avatar.jpg';
+
+const { hideAvatar = false } = Astro.props;
+---
+
+<a class="h-card" href="https://www.sofiepatoor.be">
+  <span class="p-name">sofie</span>
+  <img src={avatarImg.src} alt="Sofie's avatar" width="24" height="24" class={hideAvatar ? 'vh' : ''}>
+</a>
+
+<style lang="scss">
+  .h-card {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  span {
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+</style>
