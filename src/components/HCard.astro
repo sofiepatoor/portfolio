@@ -4,8 +4,8 @@ import avatarImg from '../assets/sofie-avatar.jpg';
 const { hideAvatar = false, asAuthor = true } = Astro.props;
 ---
 
-<a class:list={['h-card', { 'p-author': asAuthor }]} href="https://www.sofiepatoor.be">
-  <span class="p-name">sofie</span>
+<a class:list={['h-card u-url u-uid', { 'p-author': asAuthor }]} href="https://www.sofiepatoor.be">
+  <span class="p-name">Sofie Patoor</span>
   <img src={avatarImg.src} alt="Sofie's avatar" width="24" height="24" class={hideAvatar ? 'vh' : ''}>
 </a>
 
@@ -17,6 +17,10 @@ const { hideAvatar = false, asAuthor = true } = Astro.props;
   }
 
   span {
+    text-transform: lowercase;
+  }
+
+  a {
     text-decoration: none;
 
     &:hover,
