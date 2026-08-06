@@ -8,13 +8,17 @@ Here, I want to document how I keep growing as a **developer** and put the conce
 
 In the near future, I'd like to add certain features, pages and content:
 
-- [ ] make the layout and content of the "about" page more interesting
-- [ ] implement MDX to use for content
-- [ ] add a "projects" page where I document the process of building personal projects
-- [ ] add tags for my blog
-- [ ] add optimisations for the [IndieWeb](https://indieweb.org)
-- [ ] hide some fun little easter eggs
+- [x] add optimisations for the [IndieWeb](https://indieweb.org) (web-sign in, microformats)
+- [ ] make the layout and content of the /about page more interesting
+- [ ] add a "projects" page where I document my personal projects
+- [ ] implement MDX to use for content (maybe)
+- [ ] add a "media journal" where I track the media that I consume
+- [ ] add tags for my blog as it grows
+- [ ] add a [/now](https://indieweb.org/now) page
+- [ ] add some easter eggs
 - [ ] ... and more!
+
+This order of items in this roadmap might change (and already have) if I feel like it.
 
 ## Colophon
 
