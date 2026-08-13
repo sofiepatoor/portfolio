@@ -29,8 +29,9 @@ html {
   --space-md: 1rem;
   --space-lg: 2rem;
 
-  --font-sans-serif: 'Open Sans', 'Helvetica Neue', system-ui, -apple-system, sans-serif;
-  --font-serif: 'Averia Serif Libre', serif;
+  --radius-sm: 8px;
+  --radius-md: 18px;
+
 
   *:focus-visible {
     outline: var(--purple-light) dashed medium;
