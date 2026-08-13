@@ -15,6 +15,7 @@ html {
   --purple: hsl(280, 55%, 50%);
   --purple-light: hsl(280, 66%, 85%);
   --purple-hover: hsl(280, 55%, 40%);
+  --purple-bg: hsla(280, 55%, 50%, 0.25);
   --indigo: hsl(225, 88%, 20%);
 
   --type-xs: 0.875rem; /* 14px */
@@ -26,6 +27,7 @@ html {
   --type-3xl: 2.625rem; /* 42px */
   --type-4xl: 4rem; /* 64px */
 
+  --space-sm: 0.6rem;
   --space-md: 1rem;
   --space-lg: 2rem;
 

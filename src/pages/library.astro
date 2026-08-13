@@ -1,12 +1,19 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import MediaList from "../components/MediaList.astro";
 ---
 
 <BaseLayout pageTitle="library">
   <section class="h-feed">
     <div class="container">
       <h1 class="p-name">Library</h1>
-      <p>A list of books / movies / tv shows / games that I've consumed</p>
+      <p>A list of books / movies / tv shows / games</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <MediaList />
     </div>
   </section>
 </BaseLayout>

@@ -1,0 +1,69 @@
+---
+import { getCollection } from "astro:content";
+const books = await getCollection("books");
+
+import Book from "../assets/icons/book.svg";
+---
+
+<ul class="list">
+  {
+    books.map((item) => (
+      <li>
+        <div class="item">
+          <Book class="item-icon" width={20} height={20} />
+          <div class="item-info">
+            <p class="item-title">{item.data.title}</p>
+            <p class="item-details caption">&sol; {item.data.author}</p>
+          </div>
+        </div>
+      </li>
+    ))
+  }
+</ul>
+
+<style lang="scss">
+  .list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    gap: var(--space-sm);
+  }
+
+  .item {
+    --padding-x: 16px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0 0.8rem;
+    padding-block: 14px;
+    padding-inline: var(--padding-x);
+    isolation: isolate;
+    background-color: var(--purple-bg);
+    border-radius: var(--radius-sm);
+
+    @media screen and (min-width: 48rem) {
+      margin-left: calc(-1 * var(--padding-x));
+      margin-right: calc(-1 * var(--padding-x));
+    }
+  }
+
+  .item-info {
+    display: flex;
+    align-items: baseline;
+    gap: 0 0.8rem;
+    flex-grow: 1;
+  }
+
+  .item-title {
+    line-height: 1;
+    font-size: clamp(1rem, 3vw, 1.15rem);
+    font-weight: 500;
+  }
+
+  .item-details {
+    opacity: 0.75;
+    line-height: 1;
+  }
+</style>
