@@ -1,0 +1,16 @@
+[
+  {
+    "id": "film-1",
+    "type": "movie",
+    "title": "movieeeeee title",
+    "year": "2016",
+    "date_finished": "2026-08-06"
+  },
+  {
+    "id": "film-2",
+    "type": "movie",
+    "title": "film of the film",
+    "year": "1998",
+    "date_finished": "2026-08-04"
+  }
+]

@@ -1,19 +1,27 @@
 ---
 import { getCollection } from "astro:content";
 const books = await getCollection("books");
+const movies = await getCollection("movies");
+
+const media = [...books, ...movies].sort((a, b) => b.data.date_finished.valueOf() - a.data.date_finished.valueOf());
 
 import Book from "../assets/icons/book.svg";
+import Movie from "../assets/icons/movie.svg";
 ---
 
 <ul class="list">
   {
-    books.map((item) => (
+    media.map((item) => (
       <li>
         <div class="item">
-          <Book class="item-icon" width={20} height={20} />
+          {item.data.type === "book" ? <Book class="item-icon" width={20} height={20} /> : <Movie class="item-icon" width={20} height={20} />}
           <div class="item-info">
             <p class="item-title">{item.data.title}</p>
-            <p class="item-details caption">&sol; {item.data.author}</p>
+            <p class="item-details caption">
+              &sol;
+              {item.data.author}
+              {item.data.year}
+            </p>
           </div>
         </div>
       </li>

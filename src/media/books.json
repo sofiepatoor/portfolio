@@ -1,14 +1,16 @@
 [
   {
     "id": "test",
+    "type": "book",
     "title": "book title",
     "author": "author",
-    "date_read": "2026-08-07"
+    "date_finished": "2026-08-07"
   },
   {
     "id": "test-2",
+    "type": "book",
     "title": "title 2",
     "author": "sofie",
-    "date_read": "2026-08-05"
+    "date_finished": "2026-08-05"
   }
 ]

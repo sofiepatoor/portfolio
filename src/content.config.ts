@@ -19,10 +19,21 @@ const blog = defineCollection({
 const books = defineCollection({
   loader: file("src/media/books.json"),
   schema: z.object({
+    type: z.string(),
     title: z.string(),
     author: z.string(),
-    date_read: z.string(),
+    date_finished: z.coerce.date(),
   }),
 });
 
-export const collections = { blog, books };
+const movies = defineCollection({
+  loader: file("src/media/movies.json"),
+  schema: z.object({
+    type: z.string(),
+    title: z.string(),
+    year: z.string(),
+    date_finished: z.coerce.date(),
+  }),
+});
+
+export const collections = { blog, books, movies };
