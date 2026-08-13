@@ -32,6 +32,8 @@ html {
   --radius-sm: 8px;
   --radius-md: 18px;
 
+  --font-sans-serif: "Open Sans", "Helvetica Neue", system-ui, -apple-system, sans-serif;
+  --font-serif: "Averia Serif Libre", serif;
 
   *:focus-visible {
     outline: var(--purple-light) dashed medium;
@@ -62,7 +64,9 @@ h1 {
   margin-bottom: 0.4em;
 }
 
-h2, h3, h4 {
+h2,
+h3,
+h4 {
   font-family: var(--font-sans-serif);
   font-weight: 500;
   margin-bottom: 0.8em;
@@ -110,7 +114,9 @@ section {
     margin-bottom: 1.2em;
   }
 
-  h2, h3, h4 {
+  h2,
+  h3,
+  h4 {
     margin-top: 2em;
   }
 
