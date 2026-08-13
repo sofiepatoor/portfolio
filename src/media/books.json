@@ -1,0 +1,14 @@
+[
+  {
+    "id": "test",
+    "title": "book title",
+    "author": "author",
+    "date_read": "2026-08-07"
+  },
+  {
+    "id": "test-2",
+    "title": "title 2",
+    "author": "sofie",
+    "date_read": "2026-08-05"
+  }
+]
