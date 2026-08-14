@@ -3,7 +3,8 @@ import { getCollection } from "astro:content";
 const books = await getCollection("books");
 const movies = await getCollection("movies");
 
-const media = [...books, ...movies].sort((a, b) => b.data.date_finished.valueOf() - a.data.date_finished.valueOf());
+// const media = [...books, ...movies].sort((a, b) => b.data.date_finished.valueOf() - a.data.date_finished.valueOf());
+const media = [...books, ...movies];
 
 import Book from "../assets/icons/book.svg";
 import Movie from "../assets/icons/movie.svg";
