@@ -1,16 +1,26 @@
 [
   {
-    "id": "test",
+    "id": "lotr-1",
     "type": "book",
-    "title": "book title",
-    "author": "author",
-    "date_finished": "2026-08-07"
+    "title": "Lord of the Rings: the Fellowship of the Ring",
+    "author": "JRR Tolkien",
+    "year": "1953",
+    "date_started": "2026-08-01",
+    "date_finished": null,
+    "first_time": true,
+    "rating": null,
+    "page_url": null
   },
   {
-    "id": "test-2",
+    "id": "hunger-games-0",
     "type": "book",
-    "title": "title 2",
-    "author": "sofie",
-    "date_finished": "2026-08-05"
+    "title": "Ballad of Songbirds and Snakes",
+    "author": "Suzanne Collins",
+    "year": "2020",
+    "date_started": "2026-08-01",
+    "date_finished": null,
+    "first_time": true,
+    "rating": null,
+    "page_url": null
   }
 ]

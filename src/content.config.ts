@@ -16,24 +16,41 @@ const blog = defineCollection({
   }),
 });
 
+const mediaSchema = z.object({
+  type: z.string(),
+  title: z.string(),
+  year: z.string().nullable(),
+  date_started: z.coerce.date().nullable(),
+  date_finished: z.coerce.date().nullable(),
+  first_time: z.boolean(),
+  rating: z.number().nullable(),
+  page_url: z.string().nullable(),
+});
+
 const books = defineCollection({
   loader: file("src/media/books.json"),
   schema: z.object({
-    type: z.string(),
-    title: z.string(),
+    ...mediaSchema.shape,
     author: z.string(),
-    date_finished: z.coerce.date(),
   }),
 });
 
 const movies = defineCollection({
   loader: file("src/media/movies.json"),
+  schema: mediaSchema,
+});
+
+const tvShows = defineCollection({
+  loader: file("src/media/tv.json"),
   schema: z.object({
-    type: z.string(),
-    title: z.string(),
-    year: z.string(),
-    date_finished: z.coerce.date(),
+    ...mediaSchema.shape,
+    season: z.number().optional(),
   }),
 });
 
-export const collections = { blog, books, movies };
+const games = defineCollection({
+  loader: file("src/media/games.json"),
+  schema: mediaSchema,
+});
+
+export const collections = { blog, books, movies, tvShows, games };

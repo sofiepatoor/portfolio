@@ -1,16 +1,24 @@
 [
   {
-    "id": "film-1",
+    "id": "pretty-woman",
     "type": "movie",
-    "title": "movieeeeee title",
-    "year": "2016",
-    "date_finished": "2026-08-06"
+    "title": "Pretty woman",
+    "year": "1990",
+    "date_started": null,
+    "date_finished": "2026-08-08",
+    "first_time": true,
+    "rating": 7,
+    "page_url": null
   },
   {
-    "id": "film-2",
+    "id": "10-things-i-hate",
     "type": "movie",
-    "title": "film of the film",
+    "title": "10 things I hate about you",
     "year": "1998",
-    "date_finished": "2026-08-04"
+    "date_started": null,
+    "date_finished": "2026-08-04",
+    "first_time": true,
+    "rating": 7,
+    "page_url": null
   }
 ]

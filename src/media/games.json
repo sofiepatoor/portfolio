@@ -1,0 +1,24 @@
+[
+  {
+    "id": "bg-3",
+    "type": "game",
+    "title": "Baldur's Gate 3",
+    "year": "2023",
+    "date_started": "2026-01-08",
+    "date_finished": null,
+    "first_time": false,
+    "rating": 10,
+    "page_url": null
+  },
+  {
+    "id": "dragon-age-1",
+    "type": "game",
+    "title": "Dragon Age: Origins",
+    "year": "2011",
+    "date_started": "2025-05-04",
+    "date_finished": "2025-08-04",
+    "first_time": true,
+    "rating": 7,
+    "page_url": null
+  }
+]
