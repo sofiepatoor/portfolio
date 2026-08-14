@@ -4,10 +4,10 @@
     "type": "tv",
     "title": "Modern Family",
     "year": "",
-    "date_started": "2026-04-04",
+    "season": null,
+    "date_started": "2026-04-17",
     "date_finished": null,
-    "first_time": true,
-    "season": 3,
+    "first_time": false,
     "rating": null,
     "page_url": null
   },
@@ -16,10 +16,22 @@
     "type": "tv",
     "title": "Adventure Time",
     "year": "2014",
-    "date_started": "2026-05-04",
+    "season": null,
+    "date_started": "2025",
     "date_finished": null,
     "first_time": true,
-    "season": 3,
+    "rating": null,
+    "page_url": null
+  },
+  {
+    "id": "blind-gekocht-s-8",
+    "type": "tv",
+    "title": "Blind gekocht",
+    "year": "2026",
+    "season": 8,
+    "date_started": "2025-05-04",
+    "date_finished": null,
+    "first_time": true,
     "rating": null,
     "page_url": null
   }
