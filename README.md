@@ -9,7 +9,7 @@ Now, I want my website to be a place where I can express myself. This means I wi
 In the near future, I'd like to add these features, pages and content:
 
 - [x] add optimisations for the [IndieWeb](https://indieweb.org) (web-sign in, microformats)
-- [ ] add a "media journal" or "library" page where I track the media that I consume
+- [x] add a "media journal" or "library" page where I track the media that I consume
 - [ ] add a [/now](https://indieweb.org/now) page
 - [ ] add webrings
 - [ ] add a theme switcher
