@@ -1,0 +1,56 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout pageTitle="colophon">
+  <section>
+    <div class="container">
+      <h1>Colophon</h1>
+      <div class="content">
+        <p>
+          This project was built using <strong>Astro</strong>, a Javascript framework I've loved working with so far. Hosting and deployment are handled by <strong>Vercel</strong>. My editor of choice
+          is <strong>Visual Studio Code</strong> and I mostly use <strong>Hyper</strong> as my terminal.
+        </p>
+        <p>
+          I used <strong>Figma</strong> to visualize what I wanted this website to look like. I deliberately wanted to keep it relatively simple because I'm a terribly picky person when it comes to things
+          like this and keep more challenging (and exciting) layouts and designs for the projects I'm planning to do.
+          <br />
+          The fonts I use are Averia Serif Libre and Open Sans, both from <strong>Google Fonts</strong>. UI icons are from <strong>Lucide</strong>.
+        </p>
+        <p>
+          I don't use AI to generate code or content for my website, because I want it to feel handmade and personal to me and because I simply have the skillset to do it myself. Hold up, I'm not
+          judging you if you do use AI for your website or projects! I think it's a great tool to give people the power to create things that didn't seem doable before. It's a nuanced topic, so I will
+          probably make a blog post about it someday.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>Changelog</h2>
+      <ol class="changelog-list">
+        <li><strong>06-08-2026</strong>: "about" page was removed and content was moved to homepage, also added a proper h-card to footer</li>
+        <li><strong>05-08-2026</strong>: added microformats for blog posts</li>
+        <li><strong>26-01-2026</strong>: website rebirth yay!</li>
+      </ol>
+    </div>
+  </section>
+</BaseLayout>
+
+<style lang="scss">
+  h1 {
+    padding-top: clamp(30px, 5vh, 60px);
+  }
+
+  .changelog-list {
+    ol,
+    li {
+      list-style: none;
+    }
+
+    li {
+      line-height: 1.7;
+    }
+  }
+</style>
