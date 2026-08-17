@@ -158,6 +158,11 @@ blockquote {
   letter-spacing: 0.3ch;
 }
 
+.caption-small {
+  @extend .caption;
+  font-size: 0.7rem;
+}
+
 .caption-link {
   @extend .caption;
   position: relative;
