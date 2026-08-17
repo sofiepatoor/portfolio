@@ -4,7 +4,7 @@
     "type": "game",
     "title": "Baldur's Gate 3",
     "year": "2023",
-    "date_started": "2026-01",
+    "date_started": "2025-11",
     "date_finished": null,
     "first_time": false,
     "rating": 10,
@@ -22,12 +22,23 @@
     "page_url": null
   },
   {
+    "id": "stardew-valley",
+    "type": "game",
+    "title": "Stardew Valley",
+    "year": "2016",
+    "date_started": "2023-12",
+    "date_finished": "2024-05",
+    "first_time": true,
+    "rating": 7.5,
+    "page_url": null
+  },
+  {
     "id": "dragon-age-1",
     "type": "game",
     "title": "Dragon Age: Origins",
-    "year": "2011",
-    "date_started": "2025",
-    "date_finished": "2025",
+    "year": "2010",
+    "date_started": "2025-02",
+    "date_finished": "2025-06",
     "first_time": true,
     "rating": 8.5,
     "page_url": null
@@ -37,8 +48,8 @@
     "type": "game",
     "title": "Dragon Age 2",
     "year": "2011",
-    "date_started": "2025",
-    "date_finished": "2025",
+    "date_started": "2025-06",
+    "date_finished": "2025-07",
     "first_time": true,
     "rating": 7.5,
     "page_url": null
@@ -47,9 +58,9 @@
     "id": "dragon-age-3",
     "type": "game",
     "title": "Dragon Age: Inquisition",
-    "year": "2011",
-    "date_started": "2025",
-    "date_finished": "2026",
+    "year": "2014",
+    "date_started": "2025-08",
+    "date_finished": "2025-11",
     "first_time": true,
     "rating": 8.5,
     "page_url": null
@@ -61,6 +72,17 @@
     "year": "2022",
     "date_started": "2026-04",
     "date_finished": null,
+    "first_time": true,
+    "rating": null,
+    "page_url": null
+  },
+  {
+    "id": "life-is-strange",
+    "type": "game",
+    "title": "Life is Strange",
+    "year": "2015",
+    "date_started": "2025",
+    "date_finished": "2025",
     "first_time": true,
     "rating": null,
     "page_url": null

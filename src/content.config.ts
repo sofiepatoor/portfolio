@@ -44,7 +44,7 @@ const tvShows = defineCollection({
   loader: file("src/media/tv.json"),
   schema: z.object({
     ...mediaSchema.shape,
-    season: z.number().nullable(),
+    season: z.string().nullable(),
   }),
 });
 
