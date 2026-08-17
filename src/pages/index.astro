@@ -37,7 +37,7 @@ import portraitImg from "../assets/sofie.jpg";
     <div class="container">
       <h2 class="caption">about me</h2>
       <div class="about-me-content">
-        <Picture src={portraitImg} formats={["avif", "webp"]} alt="Photo of Sofie" layout="constrained" width={200} height={200} />
+        <Picture src={portraitImg} formats={["avif", "webp"]} alt="Photo of Sofie" layout="constrained" width={180} height={180} />
         <div class="content">
           <p>
             Ever since discovering the world wide web as a child, I've had an interest in everything digital. I can't imagine my youth without it <small>(in a good way, not the brain rot way!)</small> and
@@ -83,6 +83,7 @@ import portraitImg from "../assets/sofie.jpg";
 
   .about-me-content {
     display: flex;
+    flex-direction: column;
     gap: 1rem;
 
     picture,
@@ -98,6 +99,10 @@ import portraitImg from "../assets/sofie.jpg";
       &:focus {
         color: white;
       }
+    }
+
+    @media screen and (min-width: 48rem) {
+      flex-direction: row;
     }
   }
 </style>
