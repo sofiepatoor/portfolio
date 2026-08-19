@@ -11,6 +11,7 @@
   "dependencies": {
     "@fontsource/averia-serif-libre": "^5.2.6",
     "@fontsource/open-sans": "^5.2.6",
+    "@vercel/analytics": "^1.6.1",
     "astro": "^5.16.15",
     "sass": "^1.97.2"
   }

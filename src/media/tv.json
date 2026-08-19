@@ -1,0 +1,62 @@
+[
+  {
+    "id": "modern-family",
+    "type": "tv",
+    "title": "Modern Family",
+    "year": "2009-2020",
+    "season": null,
+    "date_started": "2026-04-17",
+    "date_finished": null,
+    "first_time": false,
+    "rating": null,
+    "page_url": null
+  },
+  {
+    "id": "adventure-time-s-7",
+    "type": "tv",
+    "title": "Adventure Time",
+    "year": "2015",
+    "season": "7",
+    "date_started": "2026-07-15",
+    "date_finished": null,
+    "first_time": true,
+    "rating": null,
+    "page_url": null
+  },
+  {
+    "id": "blind-gekocht-s-8",
+    "type": "tv",
+    "title": "Blind gekocht",
+    "year": "2026",
+    "season": "8",
+    "date_started": "2026-06-08",
+    "date_finished": "2026-07-05",
+    "first_time": true,
+    "rating": null,
+    "page_url": null
+  },
+  {
+    "id": "bridgerton-s4",
+    "type": "tv",
+    "title": "Bridgerton",
+    "year": "2026",
+    "season": "4",
+    "date_started": "2026-02-20",
+    "date_finished": "2026-03-02",
+    "first_time": true,
+    "rating": null,
+    "page_url": null
+  },
+  {
+    "id": "dexter",
+    "type": "tv",
+    "title": "Dexter",
+    "year": "2006 - 2009",
+    "season": "1 - 4",
+    "date_started": "2025-01-30",
+    "date_finished": "2025-04-21",
+    "first_time": true,
+    "rating": null,
+    "page_url": null
+  }
+]

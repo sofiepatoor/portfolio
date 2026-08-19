@@ -1,14 +1,9 @@
 ---
 const { href, alignment } = Astro.props;
-const isExternal = href.includes('http');
+const isExternal = href.includes("http");
 ---
 
-<a
-  href={href}
-  class={alignment}
-  target={isExternal ? '_blank' : ''}
-  rel={isExternal ? 'noopener' : ''}
->
+<a href={href} class={alignment} target={isExternal ? "_blank" : ""} rel={isExternal ? "noopener" : ""}>
   <slot />
   {isExternal && <span class="vh">(opens in new tab)</span>}
 </a>
@@ -21,7 +16,7 @@ const isExternal = href.includes('http');
     position: relative;
     display: flex;
     background-color: var(--purple);
-    border-radius: 18px;
+    border-radius: var(--radius-md);
     width: fit-content;
     color: white;
     font-size: 0.8rem;
@@ -46,7 +41,7 @@ const isExternal = href.includes('http');
       height: calc(100% + var(--depth));
       background-color: var(--purple-light);
       border: 3px solid var(--purple);
-      border-radius: 18px;
+      border-radius: var(--radius-md);
       z-index: -1;
       transition: all 0.2s ease-in;
     }

@@ -1,8 +1,8 @@
 ---
 import { getCollection } from "astro:content";
-const allPosts = await getCollection("blog");
+const allPosts = (await getCollection("blog")).sort((a, b) => b.data.created_date.valueOf() - a.data.created_date.valueOf());
 
-import ArrowRight from '../assets/arrow-right.svg';
+import ArrowRight from "../assets/icons/arrow-right.svg";
 
 const dateFormatOptions = {
   year: "numeric",
@@ -12,21 +12,19 @@ const dateFormatOptions = {
 ---
 
 <ol class="list">
-{
-  allPosts.map((post) => (
-    <li class="item">
-      <div class="item-info">
-        <a href={`/blog/${post.id}/`} class="item-title">
-          {post.data.title}
-        </a>
-        <time class="item-date caption">
-          {post.data.created_date.toLocaleDateString('en-GB', dateFormatOptions)}
-        </time>
-      </div>
-      <ArrowRight width={28} height={28} stroke="currentColor" />
-    </li>
-  ))
-}
+  {
+    allPosts.map((post) => (
+      <li class="item h-entry">
+        <div class="item-info">
+          <a href={`/blog/${post.id}/`} class="item-title u-url p-name">
+            {post.data.title}
+          </a>
+          <time class="item-date caption">{post.data.created_date.toLocaleDateString("en-GB", dateFormatOptions)}</time>
+        </div>
+        <ArrowRight width={28} height={28} stroke="currentColor" />
+      </li>
+    ))
+  }
 </ol>
 
 <style lang="scss">
@@ -74,7 +72,7 @@ const dateFormatOptions = {
   .item svg {
     background-color: transparent;
     padding: 4px;
-    border-radius: 8px;
+    border-radius: var(--radius-sm);
     transition: all 0.15s ease-in-out;
   }
 

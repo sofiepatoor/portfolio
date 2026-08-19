@@ -1,14 +1,12 @@
 ---
-
-
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PostList from "../components/PostList.astro";
 ---
 
 <BaseLayout pageTitle="blog">
-  <section>
+  <section class="h-feed">
     <div class="container">
-      <h1>Blog</h1>
+      <h1 class="p-name">Blog</h1>
       <PostList />
     </div>
   </section>

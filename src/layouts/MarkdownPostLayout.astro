@@ -5,6 +5,7 @@ import BaseLayout from './BaseLayout.astro';
 
 const { frontmatter } = Astro.props;
 
+const currentUrl = `https://www.sofiepatoor.be${Astro.url.pathname}`;
 const dateFormatOptions = {
   year: "numeric",
   month: "short",
@@ -12,16 +13,19 @@ const dateFormatOptions = {
 };
 ---
 <BaseLayout pageTitle={frontmatter.title}>
-  <div class="container">
-    <h1>{frontmatter.title}</h1>
-    <p class="short-description">{frontmatter.short_description}</p>
-    <time class="date caption">{frontmatter.created_date.toLocaleDateString('en-GB', dateFormatOptions)}</time>
-    <Card>
-      <div class="content">
-        <slot />
-      </div>
-      <Button href="/blog">View all posts</Button>
-    </Card>
+  <div class="h-entry">
+    <div class="container">
+      <h1 class="p-name">{frontmatter.title}</h1>
+      <a href={currentUrl} class="vh u-url" aria-hidden="true" tabindex="-1"></a>
+      <p class="short-description p-summary">{frontmatter.short_description}</p>
+      <time class="date caption dt-published">{frontmatter.created_date.toLocaleDateString('en-GB', dateFormatOptions)}</time>
+      <Card>
+        <div class="content e-content">
+          <slot />
+        </div>
+        <Button href="/blog">View all posts</Button>
+      </Card>
+    </div>
   </div>
 </BaseLayout>
 
@@ -32,7 +36,7 @@ const dateFormatOptions = {
   }
 
   .short-description {
-    font-size: 1.25rem;
+    font-size: clamp(1rem, 3vw, 1.25rem)
   }
 
   .date {

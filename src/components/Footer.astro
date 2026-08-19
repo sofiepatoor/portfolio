@@ -1,19 +1,23 @@
 ---
-
+import HCard from "./HCard.astro";
 ---
 
 <footer>
   <div class="container">
-    <address>
-      <a href="https://www.linkedin.com/in/sofiepatoor/" class="caption-link" target="_blank" rel="noopener">
-        LinkedIn
-        <span class="vh">(opens in new tab)</span>
-      </a>
-      <a href="https://github.com/sofiepatoor" class="caption-link" target="_blank" rel="noopener">
-        Github
-        <span class="vh">(opens in new tab)</span>
-      </a>
-    </address>
+    <div class="footer-content">
+      <HCard hideAvatar={true} />
+      <ul>
+        <li>
+          <a href="/colophon" class="caption-link">colophon</a>
+        </li>
+        <li>
+          <a href="https://github.com/sofiepatoor" class="caption-link" target="_blank" rel="me">
+            Github
+            <span class="vh">(opens in new tab)</span>
+          </a>
+        </li>
+      </ul>
+    </div>
   </div>
 </footer>
 
@@ -23,14 +27,20 @@
     padding-block: 1rem;
   }
 
-  address {
-    font-style: normal;
+  .footer-content {
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
     gap: var(--space-md);
-  }
 
-  p {
-    text-align: center;
+    ul {
+      display: flex;
+      gap: var(--space-md);
+      padding-left: 0;
+    }
+
+    li {
+      list-style: none;
+    }
   }
 </style>

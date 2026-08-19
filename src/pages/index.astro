@@ -1,9 +1,11 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Button from '../components/Button.astro';
-import Card from '../components/Card.astro';
-import PostList from '../components/PostList.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Button from "../components/Button.astro";
+import Card from "../components/Card.astro";
+import PostList from "../components/PostList.astro";
 
+import { Picture } from "astro:assets";
+import portraitImg from "../assets/sofie.jpg";
 ---
 
 <BaseLayout pageTitle="home">
@@ -12,26 +14,48 @@ import PostList from '../components/PostList.astro';
       <h1>Sofie Patoor</h1>
       <div>
         <p>
-          I'm a medior <strong>front-end developer</strong> with a creative background, based in Ghent. I care about thoughtful design, accessibility and high-quality code.
+          front-end developer &sol;&sol; hobby collector
+          <br />
+          Welcome to my little internet nook!
         </p>
-        <Button href="https://www.linkedin.com/in/sofiepatoor/" alignment={'center'}>
-          Say hi!
-        </Button>
       </div>
     </div>
   </section>
-  <section>
+
+  <section class="h-feed">
     <div class="container">
       <Card title="blog">
-        <PostList />
+        <div class="blog-card-inner">
+          <PostList />
+          <Button href="/blog"> View all posts </Button>
+        </div>
       </Card>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 class="caption">about me</h2>
+      <div class="about-me-content">
+        <Picture src={portraitImg} formats={["avif", "webp"]} alt="Photo of Sofie" layout="constrained" width={180} height={180} />
+        <div class="content">
+          <p>
+            Ever since discovering the world wide web as a child, I've had an interest in everything digital. I can't imagine my youth without it <small>(in a good way, not the brain rot way!)</small> and
+            it's a big reason of why I became a front-end developer.
+          </p>
+          <p>
+            Next to coding, I tend to have <em>a lot</em> of different interests, ranging from gaming, to pilates, to creative side-quests, to finally learning how to play my guitar. Whenever I want to
+            slow down, I enjoy <s>grandma</s> hobbies like reading, sewing and taking walks.
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 </BaseLayout>
 
 <style lang="scss">
   h1 {
-    font-size: 4rem;
+    font-size: clamp(2rem, 10vw, 4rem);
     text-align: center;
   }
 
@@ -44,10 +68,41 @@ import PostList from '../components/PostList.astro';
     padding-block: 2rem;
 
     p {
-      font-size: 1.25rem;
+      font-size: clamp(1rem, 3vw, 1.25rem);
       text-align: center;
       margin: 0 auto 2rem;
       max-width: 50ch;
+    }
+  }
+
+  .blog-card-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .about-me-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    picture,
+    img {
+      flex-shrink: 0;
+      border-radius: var(--radius-sm);
+      max-width: 200px;
+    }
+
+    a {
+      text-decoration: none;
+      &:hover,
+      &:focus {
+        color: white;
+      }
+    }
+
+    @media screen and (min-width: 48rem) {
+      flex-direction: row;
     }
   }
 </style>

@@ -1,0 +1,129 @@
+---
+const { mediaItems } = Astro.props;
+
+import Book from "../assets/icons/book.svg";
+import Movie from "../assets/icons/movie.svg";
+import Tv from "../assets/icons/tv.svg";
+import Game from "../assets/icons/game.svg";
+import Repeat from "../assets/icons/repeat.svg";
+---
+
+<ul class="list">
+  {
+    mediaItems.map((item) => (
+      <li>
+        <div class="item">
+          {item.data.type === "book" && <Book class="item-icon" width={20} height={20} />}
+          {item.data.type === "movie" && <Movie class="item-icon" width={20} height={20} />}
+          {item.data.type === "tv" && <Tv class="item-icon" width={20} height={20} />}
+          {item.data.type === "game" && <Game class="item-icon" width={20} height={20} />}
+
+          <div class="item-info">
+            <p class="item-title">
+              {item.data.title}
+              {item.data.season && item.data.season !== null && <span class="item-title-season">(S{item.data.season})</span>}
+              {item.data.first_time == false && <Repeat class="item-title-icon" width={18} height={18} />}
+            </p>
+            <p class="item-details caption-small">
+              {item.data.author && item.data.author !== null && (
+                <>
+                  <span class="divider">&sol;</span>
+                  <span>{item.data.author}</span>
+                </>
+              )}
+              {item.data.year && item.data.year !== null && (
+                <>
+                  <span class="divider">&sol;</span>
+                  <span>{item.data.year}</span>
+                </>
+              )}
+            </p>
+          </div>
+        </div>
+      </li>
+    ))
+  }
+</ul>
+
+<style lang="scss">
+  .list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-lg);
+  }
+
+  .item {
+    --padding-x: 16px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0 0.8rem;
+    padding-block: 14px;
+    padding-inline: var(--padding-x);
+    isolation: isolate;
+    background-color: var(--purple-bg);
+    border-radius: var(--radius-sm);
+
+    @media screen and (min-width: 48rem) {
+      margin-left: calc(-1 * var(--padding-x));
+      margin-right: calc(-1 * var(--padding-x));
+    }
+  }
+
+  .item-icon,
+  .item-title-icon {
+    stroke-width: 1;
+    flex-shrink: 0;
+  }
+
+  .item-info {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    gap: 0.4rem 0.6rem;
+    flex-grow: 1;
+
+    @media screen and (min-width: 48rem) {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+
+  .item-title {
+    display: flex;
+    gap: var(--space-sm);
+    line-height: 1.2;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  .item-details {
+    opacity: 0.75;
+    line-height: 1.4;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+
+    .divider {
+      display: none;
+
+      &:not(:first-child) {
+        @media screen and (min-width: 24rem) {
+          display: inline;
+        }
+      }
+
+      @media screen and (min-width: 48rem) {
+        display: inline;
+      }
+    }
+
+    @media screen and (min-width: 24rem) {
+      flex-direction: row;
+    }
+  }
+</style>

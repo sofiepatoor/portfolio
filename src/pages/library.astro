@@ -1,0 +1,50 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import MediaList from "../components/MediaList.astro";
+
+import { getCollection } from "astro:content";
+const books = await getCollection("books");
+const movies = await getCollection("movies");
+const tvShows = await getCollection("tvShows");
+const games = await getCollection("games");
+
+const media = [...books, ...movies, ...tvShows, ...games];
+const mediaFinished2026 = media
+  .filter(({ data }) => {
+    if (data.date_finished === null) {
+      return false;
+    }
+    const finishedDate = new Date(data.date_finished);
+    const limitDate = new Date("2025-12");
+    return finishedDate > limitDate;
+  })
+  .sort((a, b) => b.data.date_finished.valueOf() - a.data.date_finished.valueOf());
+const mediaOngoing = media.filter(({ data }) => {
+  return data.date_started !== null && data.date_finished === null;
+});
+---
+
+<BaseLayout pageTitle="library">
+  <section class="h-feed">
+    <div class="container">
+      <h1 class="p-name">Media journal</h1>
+      <p>Take a look at the things I've (mostly) been enjoying lately.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 class="caption">ongoing</h2>
+      <MediaList mediaItems={mediaOngoing} />
+      <h2 class="caption">2026</h2>
+      <MediaList mediaItems={mediaFinished2026} />
+      <p>This list is far from complete, I will add more entries soon!</p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style lang="scss">
+  h1 {
+    padding-top: clamp(30px, 5vh, 60px);
+  }
+</style>

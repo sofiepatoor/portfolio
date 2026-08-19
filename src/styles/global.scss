@@ -15,6 +15,7 @@ html {
   --purple: hsl(280, 55%, 50%);
   --purple-light: hsl(280, 66%, 85%);
   --purple-hover: hsl(280, 55%, 40%);
+  --purple-bg: hsla(280, 55%, 50%, 0.25);
   --indigo: hsl(225, 88%, 20%);
 
   --type-xs: 0.875rem; /* 14px */
@@ -26,11 +27,15 @@ html {
   --type-3xl: 2.625rem; /* 42px */
   --type-4xl: 4rem; /* 64px */
 
+  --space-sm: 0.6rem;
   --space-md: 1rem;
   --space-lg: 2rem;
 
-  --font-sans-serif: 'Open Sans', 'Helvetica Neue', system-ui, -apple-system, sans-serif;
-  --font-serif: 'Averia Serif Libre', serif;
+  --radius-sm: 8px;
+  --radius-md: 18px;
+
+  --font-sans-serif: "Open Sans", "Helvetica Neue", system-ui, -apple-system, sans-serif;
+  --font-serif: "Averia Serif Libre", serif;
 
   *:focus-visible {
     outline: var(--purple-light) dashed medium;
@@ -52,7 +57,7 @@ body {
 
 h1 {
   font-family: var(--font-serif);
-  font-size: 3.6rem;
+  font-size: clamp(2rem, 10vw, 3.6rem);
   font-weight: 300;
   font-style: italic;
   text-transform: lowercase;
@@ -61,7 +66,9 @@ h1 {
   margin-bottom: 0.4em;
 }
 
-h2, h3, h4 {
+h2,
+h3,
+h4 {
   font-family: var(--font-sans-serif);
   font-weight: 500;
   margin-bottom: 0.8em;
@@ -109,7 +116,9 @@ section {
     margin-bottom: 1.2em;
   }
 
-  h2, h3, h4 {
+  h2,
+  h3,
+  h4 {
     margin-top: 2em;
   }
 
@@ -145,7 +154,13 @@ blockquote {
   text-transform: uppercase;
   font-size: 0.8rem;
   font-weight: 600;
+  font-style: normal;
   letter-spacing: 0.3ch;
+}
+
+.caption-small {
+  @extend .caption;
+  font-size: 0.7rem;
 }
 
 .caption-link {
