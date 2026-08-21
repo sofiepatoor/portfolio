@@ -53,4 +53,5 @@ const games = defineCollection({
   schema: mediaSchema,
 });
 
+export type MediaData = z.infer<typeof mediaSchema>;
 export const collections = { blog, books, movies, tvShows, games };
