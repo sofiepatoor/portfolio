@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import MediaList from "../components/MediaList.astro";
+import Button from "../components/Button.astro";
 
 import { getCollection } from "astro:content";
 const books = await getCollection("books");
@@ -24,11 +25,12 @@ const mediaOngoing = media.filter(({ data }) => {
 });
 ---
 
-<BaseLayout pageTitle="library">
-  <section class="h-feed">
+<BaseLayout pageTitle="media journal">
+  <section>
     <div class="container">
-      <h1 class="p-name">Media journal</h1>
+      <h1>Media journal</h1>
       <p>Take a look at the things I've (mostly) been enjoying lately.</p>
+      <Button href="/library/all"> View all posts </Button>
     </div>
   </section>
 

@@ -1,0 +1,57 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import MediaList from "../../components/MediaList.astro";
+import TextLink from "../../components/TextLink.astro";
+
+import { getCollection } from "astro:content";
+const books = await getCollection("books");
+const movies = await getCollection("movies");
+const tvShows = await getCollection("tvShows");
+const games = await getCollection("games");
+
+const media = [...books, ...movies, ...tvShows, ...games];
+const mediaFinished = media
+  .filter(({ data }) => {
+    return data.date_finished !== null;
+  })
+  .sort((a, b) => b.data.date_finished.valueOf() - a.data.date_finished.valueOf());
+
+const mediaGroups = Object.groupBy(mediaFinished, ({ data }) => {
+  const dateFinishedYear = data.date_finished?.getFullYear();
+  return dateFinishedYear;
+});
+
+for (const year in mediaGroups) {
+  mediaGroups[year] = Object.groupBy(mediaGroups[year], (item) => item.data.type);
+}
+const years = Object.keys(mediaGroups).sort((a, b) => b - a);
+const types = console.log(mediaGroups);
+---
+
+<BaseLayout pageTitle="my library">
+  <section>
+    <div class="container">
+      <h1>Library</h1>
+      <p>A full overview :))</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      {
+        years.map((year) => (
+          <>
+            <h2>{year}</h2>
+            {Object.keys(mediaGroups[year]).map((type) => (
+              <>
+                <h3 class="caption">{type}</h3>
+                <MediaList mediaItems={mediaGroups[year][type]} />
+              </>
+            ))}
+            {/* <MediaList mediaItems={mediaGroups[year]} /> */}
+          </>
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>
