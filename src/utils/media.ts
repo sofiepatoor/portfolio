@@ -44,6 +44,20 @@ export function groupMediaByYear(mediaToSort: MediaItem[]) {
   return mediaGrouped;
 }
 
+const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+export function groupMediaByMonth(mediaToSort: MediaItem[]) {
+  const mediaGrouped = Object.groupBy(mediaToSort, ({ data }) => {
+    if (data.date_finished === null) {
+      return false;
+    }
+    const year = data.date_finished?.getFullYear();
+    const monthNr = data.date_finished?.getMonth();
+    const month = months[monthNr];
+    return `${month} ${year}`;
+  });
+  return mediaGrouped;
+}
+
 export function groupMediaByType(mediaToSort: MediaItem[]) {
   const mediaGrouped = Object.groupBy(mediaToSort, (item) => item.data.type);
   return mediaGrouped;

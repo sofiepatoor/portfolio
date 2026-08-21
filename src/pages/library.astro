@@ -3,14 +3,20 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import MediaList from "../components/MediaList.astro";
 import Button from "../components/Button.astro";
 
-import { mediaFinished, mediaOngoing, sortMedia } from "../utils/media";
+import { mediaFinished, mediaOngoing, sortMedia, groupMediaByMonth } from "../utils/media";
 
-const mediaFinished2026 = mediaFinished.filter(({ data }) => {
+const mediaFinishedRecently = mediaFinished.filter(({ data }) => {
   const finishedDate = data.date_finished;
-  const limitDate = new Date("2025-12");
+  if (finishedDate === null) {
+    return false;
+  }
+  const limitDate = new Date();
+  limitDate.setMonth(limitDate.getMonth() - 3);
   return finishedDate && finishedDate > limitDate;
 });
-const mediaFinished2026Sorted = sortMedia(mediaFinished2026);
+const mediaFinishedRecentlySorted = sortMedia(mediaFinishedRecently);
+const mediaRecentGroups = groupMediaByMonth(mediaFinishedRecentlySorted);
+const months = Object.keys(mediaRecentGroups);
 ---
 
 <BaseLayout pageTitle="media journal">
@@ -26,10 +32,24 @@ const mediaFinished2026Sorted = sortMedia(mediaFinished2026);
     <div class="container">
       <h2 class="caption">ongoing</h2>
       <MediaList mediaItems={mediaOngoing} />
-      <h2 class="caption">2026</h2>
-      <MediaList mediaItems={mediaFinished2026Sorted} />
-      <p>This list is far from complete, I will add more entries soon!</p>
+
+      <hr />
+
+      {
+        months.map((month) => (
+          <>
+            <h2 class="caption">{month}</h2>
+            <MediaList mediaItems={mediaRecentGroups[month]} />
+          </>
+        ))
+      }
+
+      <Button href="/library/all"> View all entries </Button>
     </div>
+  </section>
+
+  <section>
+    <div class="container"></div>
   </section>
 </BaseLayout>
 
@@ -40,5 +60,12 @@ const mediaFinished2026Sorted = sortMedia(mediaFinished2026);
 
   .intro {
     margin-bottom: var(--space-md);
+  }
+
+  hr {
+    border-color: var(--purple);
+    opacity: 0.5;
+    margin-block: var(--space-xl);
+    width: 30%;
   }
 </style>
