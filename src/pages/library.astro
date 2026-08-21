@@ -29,8 +29,8 @@ const mediaOngoing = media.filter(({ data }) => {
   <section>
     <div class="container">
       <h1>Media journal</h1>
-      <p>Take a look at the things I've (mostly) been enjoying lately.</p>
-      <Button href="/library/all"> View all posts </Button>
+      <p class="intro">Take a look at the things I've (mostly) been enjoying lately.</p>
+      <Button href="/library/all"> View all entries</Button>
     </div>
   </section>
 
@@ -48,5 +48,9 @@ const mediaOngoing = media.filter(({ data }) => {
 <style lang="scss">
   h1 {
     padding-top: clamp(30px, 5vh, 60px);
+  }
+
+  .intro {
+    margin-bottom: var(--space-md);
   }
 </style>

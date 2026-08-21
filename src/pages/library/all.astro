@@ -25,14 +25,24 @@ for (const year in mediaGroups) {
   mediaGroups[year] = Object.groupBy(mediaGroups[year], (item) => item.data.type);
 }
 const years = Object.keys(mediaGroups).sort((a, b) => b - a);
-const types = console.log(mediaGroups);
 ---
 
 <BaseLayout pageTitle="my library">
   <section>
     <div class="container">
       <h1>Library</h1>
-      <p>A full overview :))</p>
+      <p class="intro">A full overview :))</p>
+      <ul class="year-links">
+        {
+          years.map((year) => (
+            <li>
+              <a href={`#${year}`} class="caption-link">
+                {year}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
     </div>
   </section>
 
@@ -40,18 +50,37 @@ const types = console.log(mediaGroups);
     <div class="container">
       {
         years.map((year) => (
-          <>
+          <div id={year}>
             <h2>{year}</h2>
             {Object.keys(mediaGroups[year]).map((type) => (
-              <>
+              <div>
                 <h3 class="caption">{type}</h3>
                 <MediaList mediaItems={mediaGroups[year][type]} />
-              </>
+              </div>
             ))}
-            {/* <MediaList mediaItems={mediaGroups[year]} /> */}
-          </>
+          </div>
         ))
       }
     </div>
   </section>
 </BaseLayout>
+
+<style lang="scss">
+  h1 {
+    padding-top: clamp(30px, 5vh, 60px);
+  }
+
+  .intro {
+    margin-bottom: var(--space-md);
+  }
+
+  .year-links {
+    display: flex;
+    gap: var(--space-md);
+    padding: 0;
+
+    li {
+      list-style: none;
+    }
+  }
+</style>
