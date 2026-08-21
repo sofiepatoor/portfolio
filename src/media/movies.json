@@ -71,7 +71,7 @@
     "title": "Atlantis: the Lost Empire",
     "year": "2001",
     "date_started": null,
-    "date_finished": "2026",
+    "date_finished": "2026-07",
     "first_time": true,
     "rating": null,
     "page_url": null
@@ -172,6 +172,50 @@
     "date_started": null,
     "date_finished": "2026-07-11",
     "first_time": true,
+    "rating": null,
+    "page_url": null
+  },
+  {
+    "id": "kpop-demon-hunters",
+    "type": "movie",
+    "title": "Kpop Demon Hunters",
+    "year": "2025",
+    "date_started": null,
+    "date_finished": "2025-09-20",
+    "first_time": true,
+    "rating": null,
+    "page_url": null
+  },
+  {
+    "id": "damsel",
+    "type": "movie",
+    "title": "Damsel",
+    "year": "2024",
+    "date_started": null,
+    "date_finished": "2026-04-14",
+    "first_time": true,
+    "rating": null,
+    "page_url": null
+  },
+  {
+    "id": "split",
+    "type": "movie",
+    "title": "Split",
+    "year": "2016",
+    "date_started": null,
+    "date_finished": "2024-10-31",
+    "first_time": true,
+    "rating": null,
+    "page_url": null
+  },
+  {
+    "id": "porco-rosso",
+    "type": "movie",
+    "title": "Porco Rosso",
+    "year": "1992",
+    "date_started": null,
+    "date_finished": "2024-08-14",
+    "first_time": false,
     "rating": null,
     "page_url": null
   }

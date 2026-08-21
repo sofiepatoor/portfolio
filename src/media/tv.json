@@ -12,12 +12,12 @@
     "page_url": null
   },
   {
-    "id": "adventure-time-s-7",
+    "id": "adventure-time",
     "type": "tv",
     "title": "Adventure Time",
     "year": "2015",
     "season": "7",
-    "date_started": "2026-07-15",
+    "date_started": "2024-06-03",
     "date_finished": null,
     "first_time": true,
     "rating": null,
@@ -56,6 +56,54 @@
     "date_started": "2025-01-30",
     "date_finished": "2025-04-21",
     "first_time": true,
+    "rating": null,
+    "page_url": null
+  },
+  {
+    "id": "twenty-five-twenty-one",
+    "type": "tv",
+    "title": "Twenty Five Twenty One",
+    "year": "2022",
+    "season": "",
+    "date_started": "2024-05-26",
+    "date_finished": "2024-06-24",
+    "first_time": true,
+    "rating": null,
+    "page_url": null
+  },
+  {
+    "id": "bridgerton-s2",
+    "type": "tv",
+    "title": "Bridgerton",
+    "year": "2022",
+    "season": "2",
+    "date_started": "2024-06-26",
+    "date_finished": "2024-07-02",
+    "first_time": true,
+    "rating": null,
+    "page_url": null
+  },
+  {
+    "id": "bridgerton-s3",
+    "type": "tv",
+    "title": "Bridgerton",
+    "year": "2024",
+    "season": "3",
+    "date_started": "2024-07-05",
+    "date_finished": "2024-07-09",
+    "first_time": true,
+    "rating": null,
+    "page_url": null
+  },
+  {
+    "id": "sabrina",
+    "type": "tv",
+    "title": "Chilling Adventures of Sabrina",
+    "year": "2024",
+    "season": "",
+    "date_started": "2024-07-11",
+    "date_finished": "2024-10-24",
+    "first_time": false,
     "rating": null,
     "page_url": null
   }
