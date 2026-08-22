@@ -16,6 +16,12 @@ const dateFormatOptions = {
 <BaseLayout pageTitle={frontmatter.title}>
   <div class="h-entry">
     <div class="container">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/library">media</a></li>
+          <li><span aria-current="page">{frontmatter.title.toLowerCase()}</span></li>
+        </ol>
+      </nav>
       <h1 class="p-name">{frontmatter.title}</h1>
       <a href={currentUrl} class="vh u-url" aria-hidden="true" tabindex="-1"></a>
       <p class="short-description p-summary">{frontmatter.short_description}</p>
