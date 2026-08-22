@@ -6,6 +6,7 @@ import Movie from "../assets/icons/movie.svg";
 import Tv from "../assets/icons/tv.svg";
 import Game from "../assets/icons/game.svg";
 import Repeat from "../assets/icons/repeat.svg";
+import MessageBubble from "../assets/icons/message-bubble.svg";
 ---
 
 <ul class="list">
@@ -39,6 +40,11 @@ import Repeat from "../assets/icons/repeat.svg";
               )}
             </p>
           </div>
+          {item.data.page_url !== null && (
+            <a href={item.data.page_url} class="item-link" target="_blank">
+              <MessageBubble class="item-link-icon" width={20} height={20} />
+            </a>
+          )}
         </div>
       </li>
     ))
@@ -67,6 +73,12 @@ import Repeat from "../assets/icons/repeat.svg";
     isolation: isolate;
     background-color: var(--purple-bg);
     border-radius: var(--radius-sm);
+    transition: all 0.15s ease-out;
+
+    &:has(.item-link):hover,
+    &:has(.item-link):focus-within {
+      background-color: var(--purple-bg-hover);
+    }
 
     @media screen and (min-width: 48rem) {
       margin-left: calc(-1 * var(--padding-x));
@@ -75,7 +87,8 @@ import Repeat from "../assets/icons/repeat.svg";
   }
 
   .item-icon,
-  .item-title-icon {
+  .item-title-icon,
+  .item-link-icon {
     stroke-width: 1;
     flex-shrink: 0;
   }
@@ -124,6 +137,14 @@ import Repeat from "../assets/icons/repeat.svg";
 
     @media screen and (min-width: 24rem) {
       flex-direction: row;
+    }
+  }
+
+  .item-link {
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
     }
   }
 </style>
