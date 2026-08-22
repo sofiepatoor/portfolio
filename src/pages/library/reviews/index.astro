@@ -21,7 +21,7 @@ const reviews = (await getCollection("reviews")).sort((a, b) => b.data.created_d
         {
           reviews.map((review) => (
             <li>
-              <a href={`library/reviews/${review.id}/`}>{review.data.title}</a>
+              <a href={`reviews/${review.id}`}>{review.data.title}</a>
             </li>
           ))
         }

@@ -19,6 +19,7 @@ const dateFormatOptions = {
       <nav class="breadcrumbs" aria-label="Breadcrumb">
         <ol>
           <li><a href="/library">media</a></li>
+          <li><a href="/library">reviews</a></li>
           <li><span aria-current="page">{frontmatter.title.toLowerCase()}</span></li>
         </ol>
       </nav>
@@ -30,7 +31,7 @@ const dateFormatOptions = {
         <div class="content e-content">
           <slot />
         </div>
-        <Button href="/media">View all media</Button>
+        <Button href="/library/reviews">View all reviews</Button>
       </Card>
     </div>
   </div>
