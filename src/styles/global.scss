@@ -16,6 +16,7 @@ html {
   --purple-light: hsl(280, 66%, 85%);
   --purple-hover: hsl(280, 55%, 40%);
   --purple-bg: hsla(280, 55%, 50%, 0.25);
+  --purple-bg-hover: hsla(280, 55%, 50%, 0.5);
   --indigo: hsl(225, 88%, 20%);
 
   --type-xs: 0.875rem; /* 14px */
@@ -192,6 +193,34 @@ blockquote {
   &.active {
     &::after {
       height: 100%;
+    }
+  }
+}
+
+.breadcrumbs {
+  ol {
+    display: flex;
+    padding: 0;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  li:not(:last-child)::after {
+    content: "/";
+    display: inline-block;
+    margin: 0 var(--space-sm);
+  }
+
+  a {
+    opacity: 0.7;
+    text-decoration: none;
+    transition: opacity 0.15s ease-in;
+
+    &:hover,
+    &:focus {
+      opacity: 1;
     }
   }
 }
