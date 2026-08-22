@@ -1,0 +1,52 @@
+---
+import Button from "../components/Button.astro";
+import Card from "../components/Card.astro";
+import BaseLayout from "./BaseLayout.astro";
+
+const { frontmatter } = Astro.props;
+
+const currentUrl = `https://www.sofiepatoor.be${Astro.url.pathname}`;
+const dateFormatOptions = {
+  year: "numeric",
+  month: "short",
+  day: "numeric",
+};
+---
+
+<BaseLayout pageTitle={frontmatter.title}>
+  <div class="h-entry">
+    <div class="container">
+      <h1 class="p-name">{frontmatter.title}</h1>
+      <a href={currentUrl} class="vh u-url" aria-hidden="true" tabindex="-1"></a>
+      <p class="short-description p-summary">{frontmatter.short_description}</p>
+      <time class="date caption dt-published">{frontmatter.created_date.toLocaleDateString("en-GB", dateFormatOptions)}</time>
+      <Card>
+        <div class="content e-content">
+          <slot />
+        </div>
+        <Button href="/media">View all media</Button>
+      </Card>
+    </div>
+  </div>
+</BaseLayout>
+
+<style lang="scss">
+  h1 {
+    padding-top: clamp(30px, 5vh, 60px);
+    margin-bottom: 0.2em;
+  }
+
+  .short-description {
+    font-size: clamp(1rem, 3vw, 1.25rem);
+  }
+
+  .date {
+    display: block;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .content {
+    margin-bottom: 2rem;
+  }
+</style>

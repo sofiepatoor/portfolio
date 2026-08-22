@@ -1,7 +1,10 @@
 ---
+import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import MediaList from "../components/MediaList.astro";
 import Button from "../components/Button.astro";
+
+const reviews = (await getCollection("reviews")).sort((a, b) => b.data.created_date.valueOf() - a.data.created_date.valueOf());
 
 import { mediaFinished, mediaOngoing, sortMedia, groupMediaByMonth } from "../utils/media";
 
@@ -25,6 +28,21 @@ const months = Object.keys(mediaRecentGroups);
       <h1>Media journal</h1>
       <p class="intro">Take a look at the things I've (mostly) been enjoying lately.</p>
       <Button href="/library/all"> View all entries</Button>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>Reviews</h2>
+      <ul>
+        {
+          reviews.map((review) => (
+            <li>
+              <a href={`/reviews/${review.id}/`}>{review.data.title}</a>
+            </li>
+          ))
+        }
+      </ul>
     </div>
   </section>
 
