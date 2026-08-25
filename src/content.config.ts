@@ -18,12 +18,16 @@ const blog = defineCollection({
 
 const reviews = defineCollection({
   loader: glob({ pattern: "**/[^_]*.md", base: "./src/reviews" }),
-  schema: z.object({
-    title: z.string(),
-    created_date: z.date(),
-    updated_date: z.date(),
-    short_description: z.string(),
-  }),
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      type: z.string(),
+      image: image(),
+      date_created: z.date(),
+      date_started: z.date().optional(),
+      date_finished: z.date().optional(),
+      rating: z.string(),
+    }),
 });
 
 const mediaSchema = z.object({

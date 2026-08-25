@@ -1,8 +1,6 @@
 ---
-import { getCollection } from "astro:content";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
-
-const reviews = (await getCollection("reviews")).sort((a, b) => b.data.created_date.valueOf() - a.data.created_date.valueOf());
+import ReviewsList from "../../../components/ReviewsList.astro";
 ---
 
 <BaseLayout>
@@ -16,16 +14,7 @@ const reviews = (await getCollection("reviews")).sort((a, b) => b.data.created_d
       </nav>
 
       <h1>Reviews</h1>
-
-      <ul>
-        {
-          reviews.map((review) => (
-            <li>
-              <a href={`reviews/${review.id}`}>{review.data.title}</a>
-            </li>
-          ))
-        }
-      </ul>
+      <ReviewsList />
     </div>
   </section>
 </BaseLayout>

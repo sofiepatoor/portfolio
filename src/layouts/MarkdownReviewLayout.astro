@@ -1,4 +1,5 @@
 ---
+import { Picture } from "astro:assets";
 import Button from "../components/Button.astro";
 import Card from "../components/Card.astro";
 import BaseLayout from "./BaseLayout.astro";
@@ -13,20 +14,28 @@ const dateFormatOptions = {
 };
 ---
 
-<BaseLayout pageTitle={frontmatter.title}>
+<BaseLayout pageTitle={frontmatter.title.toLowerCase()}>
   <div class="h-entry">
     <div class="container">
       <nav class="breadcrumbs" aria-label="Breadcrumb">
         <ol>
           <li><a href="/library">media</a></li>
-          <li><a href="/library">reviews</a></li>
+          <li><a href="/library/reviews">reviews</a></li>
           <li><span aria-current="page">{frontmatter.title.toLowerCase()}</span></li>
         </ol>
       </nav>
-      <h1 class="p-name">{frontmatter.title}</h1>
       <a href={currentUrl} class="vh u-url" aria-hidden="true" tabindex="-1"></a>
-      <p class="short-description p-summary">{frontmatter.short_description}</p>
-      <time class="date caption dt-published">{frontmatter.created_date.toLocaleDateString("en-GB", dateFormatOptions)}</time>
+      <div class="review-header">
+        <Picture src={frontmatter.image} formats={["avif", "jpg"]} alt={`Cover image of ${frontmatter.title}`} layout="constrained" width={180} height={180} />
+        <div class="review-details">
+          <h1 class="p-name">{frontmatter.title}</h1>
+          <p class="caption">
+            <span>Reviewed on</span>
+            <time class="dt-published"> {frontmatter.date_created.toLocaleDateString("en-GB", dateFormatOptions)}</time>
+          </p>
+          <p class="caption"><span>Rating:</span> {frontmatter.rating}</p>
+        </div>
+      </div>
       <Card>
         <div class="content e-content">
           <slot />
@@ -39,12 +48,33 @@ const dateFormatOptions = {
 
 <style lang="scss">
   h1 {
-    padding-top: clamp(30px, 5vh, 60px);
-    margin-bottom: 0.2em;
+    // margin-bottom: 0.2em;
+    text-transform: none;
   }
 
   .short-description {
     font-size: clamp(1rem, 3vw, 1.25rem);
+  }
+
+  .review-header {
+    padding-block: clamp(30px, 5vh, 60px);
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+
+    picture {
+      flex-shrink: 0;
+    }
+
+    img {
+      border-radius: var(--radius-sm);
+    }
+  }
+
+  .review-details {
+    p span:first-child {
+      opacity: 0.7;
+    }
   }
 
   .date {
