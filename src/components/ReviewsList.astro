@@ -1,7 +1,6 @@
 ---
-import { getCollection } from "astro:content";
 import { Picture } from "astro:assets";
-const allReviews = (await getCollection("reviews")).sort((a, b) => b.data.date_created.valueOf() - a.data.date_created.valueOf());
+const { reviews } = Astro.props;
 
 const dateFormatOptions = {
   year: "numeric",
@@ -14,7 +13,7 @@ import ArrowRight from "../assets/icons/arrow-right.svg";
 
 <ul class="list">
   {
-    allReviews.map((review) => (
+    reviews.map((review) => (
       <li>
         <div class="item">
           <div class="item-image-wrapper">

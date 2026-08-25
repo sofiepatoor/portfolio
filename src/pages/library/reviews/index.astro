@@ -1,6 +1,9 @@
 ---
+import { getCollection } from "astro:content";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import ReviewsList from "../../../components/ReviewsList.astro";
+
+const allReviews = (await getCollection("reviews")).filter(({ data }) => data.draft !== true).sort((a, b) => b.data.date_created.valueOf() - a.data.date_created.valueOf());
 ---
 
 <BaseLayout>
@@ -14,7 +17,7 @@ import ReviewsList from "../../../components/ReviewsList.astro";
       </nav>
 
       <h1>Reviews</h1>
-      <ReviewsList />
+      {allReviews.length > 0 ? <ReviewsList reviews={allReviews} /> : <p>Coming soon!</p>}
     </div>
   </section>
 </BaseLayout>
