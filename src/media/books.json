@@ -1,5 +1,17 @@
 [
   {
+    "id": "circe",
+    "type": "book",
+    "title": "Circe",
+    "author": "Madeline Miller",
+    "year": "2018",
+    "date_started": "2026-08-20",
+    "date_finished": null,
+    "first_time": true,
+    "rating": null,
+    "page_url": null
+  },
+  {
     "id": "lotr-1",
     "type": "book",
     "title": "Lord of the Rings: The Fellowship of the Ring",
