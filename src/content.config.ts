@@ -16,6 +16,21 @@ const blog = defineCollection({
   }),
 });
 
+const reviews = defineCollection({
+  loader: glob({ pattern: "**/[^_]*.md", base: "./src/reviews" }),
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      draft: z.boolean(),
+      type: z.string(),
+      image: image(),
+      date_created: z.date(),
+      date_started: z.date().optional(),
+      date_finished: z.date().optional(),
+      rating: z.string(),
+    }),
+});
+
 const mediaSchema = z.object({
   type: z.string(),
   title: z.string(),
@@ -54,4 +69,4 @@ const games = defineCollection({
 });
 
 export type MediaData = z.infer<typeof mediaSchema>;
-export const collections = { blog, books, movies, tvShows, games };
+export const collections = { blog, reviews, books, movies, tvShows, games };

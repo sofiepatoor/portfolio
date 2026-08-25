@@ -1,0 +1,89 @@
+---
+import { Picture } from "astro:assets";
+import Button from "../components/Button.astro";
+import Card from "../components/Card.astro";
+import BaseLayout from "./BaseLayout.astro";
+
+const { frontmatter } = Astro.props;
+
+const currentUrl = `https://www.sofiepatoor.be${Astro.url.pathname}`;
+const dateFormatOptions = {
+  year: "numeric",
+  month: "short",
+  day: "numeric",
+};
+---
+
+<BaseLayout pageTitle={frontmatter.title.toLowerCase()}>
+  <div class="h-entry">
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/library">media</a></li>
+          <li><a href="/library/reviews">reviews</a></li>
+          <li><span aria-current="page">{frontmatter.title.toLowerCase()}</span></li>
+        </ol>
+      </nav>
+      <a href={currentUrl} class="vh u-url" aria-hidden="true" tabindex="-1"></a>
+      <div class="review-header">
+        <Picture src={frontmatter.image} formats={["avif", "jpg"]} alt={`Cover image of ${frontmatter.title}`} layout="constrained" width={180} height={180} />
+        <div class="review-details">
+          <h1 class="p-name">{frontmatter.title}</h1>
+          <p class="caption">
+            <span>Reviewed on</span>
+            <time class="dt-published"> {frontmatter.date_created.toLocaleDateString("en-GB", dateFormatOptions)}</time>
+          </p>
+          <p class="caption"><span>Rating:</span> {frontmatter.rating}</p>
+        </div>
+      </div>
+      <Card>
+        <div class="content e-content">
+          <slot />
+        </div>
+        <Button href="/library/reviews">View all reviews</Button>
+      </Card>
+    </div>
+  </div>
+</BaseLayout>
+
+<style lang="scss">
+  h1 {
+    // margin-bottom: 0.2em;
+    text-transform: none;
+  }
+
+  .short-description {
+    font-size: clamp(1rem, 3vw, 1.25rem);
+  }
+
+  .review-header {
+    padding-block: clamp(30px, 5vh, 60px);
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+
+    picture {
+      flex-shrink: 0;
+    }
+
+    img {
+      border-radius: var(--radius-sm);
+    }
+  }
+
+  .review-details {
+    p span:first-child {
+      opacity: 0.7;
+    }
+  }
+
+  .date {
+    display: block;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .content {
+    margin-bottom: 2rem;
+  }
+</style>
