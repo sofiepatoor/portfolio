@@ -7,7 +7,6 @@
     "date_started": "2025-11",
     "date_finished": null,
     "first_time": false,
-    "rating": 10,
     "page_url": null
   },
   {
@@ -18,7 +17,6 @@
     "date_started": "2023-09",
     "date_finished": "2024-10",
     "first_time": true,
-    "rating": 10,
     "page_url": null
   },
   {
@@ -29,7 +27,6 @@
     "date_started": "2023-12",
     "date_finished": "2024-05",
     "first_time": true,
-    "rating": 7.5,
     "page_url": null
   },
   {
@@ -40,7 +37,6 @@
     "date_started": "2025-02",
     "date_finished": "2025-06",
     "first_time": true,
-    "rating": 8.5,
     "page_url": "/library/reviews/dragon-age-origins"
   },
   {
@@ -51,7 +47,6 @@
     "date_started": "2025-06",
     "date_finished": "2025-07",
     "first_time": true,
-    "rating": 7.5,
     "page_url": null
   },
   {
@@ -62,7 +57,6 @@
     "date_started": "2025-08",
     "date_finished": "2025-11",
     "first_time": true,
-    "rating": 8.5,
     "page_url": null
   },
   {
@@ -73,7 +67,6 @@
     "date_started": "2026-04",
     "date_finished": null,
     "first_time": true,
-    "rating": null,
     "page_url": null
   },
   {
@@ -84,7 +77,6 @@
     "date_started": "2025",
     "date_finished": "2025",
     "first_time": true,
-    "rating": null,
     "page_url": null
   }
 ]

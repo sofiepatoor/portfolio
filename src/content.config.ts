@@ -38,7 +38,6 @@ const mediaSchema = z.object({
   date_started: z.coerce.date().nullable(),
   date_finished: z.coerce.date().nullable(),
   first_time: z.boolean(),
-  rating: z.number().nullable(),
   page_url: z.string().nullable(),
 });
 
