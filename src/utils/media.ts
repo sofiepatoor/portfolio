@@ -1,6 +1,8 @@
 import { getCollection } from "astro:content";
 import { type MediaData } from "../content.config";
 
+const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
 export type MediaItem = {
   id: string;
   data: MediaData;
@@ -44,7 +46,6 @@ export function groupMediaByYear(mediaToSort: MediaItem[]) {
   return mediaGrouped;
 }
 
-const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 export function groupMediaByMonth(mediaToSort: MediaItem[]) {
   const mediaGrouped = Object.groupBy(mediaToSort, ({ data }) => {
     if (data.date_finished === null) {

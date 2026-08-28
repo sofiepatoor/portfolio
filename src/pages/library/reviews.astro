@@ -1,17 +1,17 @@
 ---
 import { getCollection } from "astro:content";
-import BaseLayout from "../../../layouts/BaseLayout.astro";
-import ReviewsList from "../../../components/ReviewsList.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ReviewsList from "../../components/ReviewsList.astro";
 
 const allReviews = (await getCollection("reviews")).filter(({ data }) => data.draft !== true).sort((a, b) => b.data.date_created.valueOf() - a.data.date_created.valueOf());
 ---
 
-<BaseLayout>
+<BaseLayout pageTitle="reviews">
   <section>
     <div class="container">
       <nav class="breadcrumbs" aria-label="Breadcrumb">
         <ol>
-          <li><a href="/library">media</a></li>
+          <li><a href="/library">library</a></li>
           <li><span aria-current="page">reviews</span></li>
         </ol>
       </nav>

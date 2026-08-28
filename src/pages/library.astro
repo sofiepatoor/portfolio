@@ -4,6 +4,7 @@ import MediaList from "../components/MediaList.astro";
 import Button from "../components/Button.astro";
 
 import { mediaFinished, mediaOngoing, sortMedia, groupMediaByMonth } from "../utils/media";
+import Card from "../components/Card.astro";
 
 const mediaFinishedRecently = mediaFinished.filter(({ data }) => {
   const finishedDate = data.date_finished;
@@ -11,7 +12,7 @@ const mediaFinishedRecently = mediaFinished.filter(({ data }) => {
     return false;
   }
   const limitDate = new Date();
-  limitDate.setMonth(limitDate.getMonth() - 3);
+  limitDate.setMonth(limitDate.getMonth() - 2);
   return finishedDate && finishedDate > limitDate;
 });
 const mediaFinishedRecentlySorted = sortMedia(mediaFinishedRecently);
@@ -19,15 +20,12 @@ const mediaRecentGroups = groupMediaByMonth(mediaFinishedRecentlySorted);
 const months = Object.keys(mediaRecentGroups);
 ---
 
-<BaseLayout pageTitle="media journal">
+<BaseLayout pageTitle="library">
   <section>
     <div class="container">
-      <h1>Media journal</h1>
-      <p class="intro">Take a look at the things I've (mostly) been enjoying lately.</p>
-      <div class="button-group">
-        <Button href="/library/all"> View all entries</Button>
-        <Button href="/library/reviews"> Read reviews</Button>
-      </div>
+      <h1>Library</h1>
+      <p class="intro">These pages serve as a journal for the various forms of media I have (mostly) enjoyed over the years.</p>
+      <Button href="/library/all"> View full library </Button>
     </div>
   </section>
 
@@ -47,12 +45,25 @@ const months = Object.keys(mediaRecentGroups);
         ))
       }
 
-      <Button href="/library/all"> View all entries </Button>
+      <Button href="/library/all"> View full library </Button>
     </div>
   </section>
 
   <section>
-    <div class="container"></div>
+    <div class="container">
+      <Card>
+        <h2>My favourites &lt;3</h2>
+        <p>Coming soon!</p>
+      </Card>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>Reviews</h2>
+      <p>Coming soon :)</p>
+      <!-- <Button href="/library/all">All reviews</Button> -->
+    </div>
   </section>
 </BaseLayout>
 
@@ -68,7 +79,7 @@ const months = Object.keys(mediaRecentGroups);
   hr {
     border-color: var(--purple);
     opacity: 0.5;
-    margin-block: var(--space-xl);
+    margin-block: var(--space-lg);
     width: 30%;
   }
 </style>
