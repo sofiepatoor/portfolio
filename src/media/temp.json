@@ -1,0 +1,33 @@
+[
+  {
+    "id": "itaewon-class",
+    "type": "tv",
+    "title": "Itaewon Class",
+    "year": "2020",
+    "season": "",
+    "date_started": "2020-05-15",
+    "date_finished": "2020-08-06",
+    "first_time": false,
+    "page_url": null
+  },
+  {
+    "id": "little-women",
+    "type": "movie",
+    "title": "Little Women",
+    "year": "2019",
+    "date_started": null,
+    "date_finished": "2021-11-01",
+    "first_time": true,
+    "page_url": null
+  },
+  {
+    "id": "mean-girls",
+    "type": "movie",
+    "title": "Mean Girls",
+    "year": "2004",
+    "date_started": null,
+    "date_finished": "2021-07-15",
+    "first_time": true,
+    "page_url": null
+  }
+]
