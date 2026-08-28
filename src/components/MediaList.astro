@@ -12,7 +12,7 @@ import MessageBubble from "../assets/icons/message-bubble.svg";
 <ul class="list">
   {
     mediaItems.map((item) => (
-      <li>
+      <li data-media-title={item.data.title.toLowerCase()}>
         <div class="item">
           {item.data.type === "book" && <Book class="item-icon" width={20} height={20} />}
           {item.data.type === "movie" && <Movie class="item-icon" width={20} height={20} />}
