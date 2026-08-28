@@ -1,5 +1,16 @@
 [
   {
+    "id": "odyssey",
+    "type": "movie",
+    "title": "Odyssey",
+    "year": "2026",
+    "date_started": null,
+    "date_finished": "2026-08-27",
+    "first_time": true,
+    "rating": null,
+    "page_url": null
+  },
+  {
     "id": "pretty-woman",
     "type": "movie",
     "title": "Pretty Woman",
@@ -7,7 +18,7 @@
     "date_started": null,
     "date_finished": "2026-08-08",
     "first_time": true,
-    "rating": 7,
+    "rating": null,
     "page_url": null
   },
   {
