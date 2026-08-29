@@ -235,3 +235,10 @@ blockquote {
 .hide {
   display: none;
 }
+
+input {
+  border: none;
+  background-color: hsla(0, 0%, 100%);
+  border-radius: var(--radius-sm);
+  padding-inline: 0.5em;
+}

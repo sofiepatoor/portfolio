@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import MediaList from "../../components/MediaList.astro";
+import Search from "../../assets/icons/search.svg";
 
 import { mediaFinished, sortMedia, groupMediaByYear, groupMediaByType } from "../../utils/media";
 
@@ -21,10 +22,14 @@ for (const year in mediaGroups) {
           <li><span aria-current="page">all</span></li>
         </ol>
       </nav>
+
       <h1>Full library</h1>
 
       <div class="search-bar">
-        <label for="search-input">Search: </label>
+        <label for="search-input">
+          <span class="vh">Search:</span>
+          <Search width={20} height={20} />
+        </label>
         <input type="search" name="search" id="search-input" />
       </div>
 
@@ -81,15 +86,24 @@ for (const year in mediaGroups) {
   }
 
   .search-bar {
-    display: flex;
-    align-items: center;
-    gap: var(--space-md);
+    position: relative;
     margin-bottom: var(--space-md);
 
+    label {
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%);
+      z-index: 1;
+    }
+
+    svg {
+      stroke: var(--indigo);
+    }
+
     input {
-      border: none;
-      background-color: hsla(0, 0%, 100%);
-      padding-inline: 0.5em;
+      height: 36px;
+      padding-left: 40px;
     }
   }
 
