@@ -60,6 +60,16 @@
     "page_url": null
   },
   {
+    "id": "hogwarts-legacy",
+    "type": "game",
+    "title": "Hogwart's Legacy",
+    "year": "2023",
+    "date_started": null,
+    "date_finished": "2026-03-26",
+    "first_time": true,
+    "page_url": null
+  },
+  {
     "id": "stray",
     "type": "game",
     "title": "Stray",
